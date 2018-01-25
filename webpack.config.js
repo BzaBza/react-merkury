@@ -5,18 +5,33 @@ const BUILD_DIR = path.resolve(__dirname, 'src/client/public');
 const APP_DIR = path.resolve(__dirname, 'src/client/app');
 
 const config = {
-    entry: [APP_DIR + '/index.jsx',
+    entry: [APP_DIR + '/index.js',
         APP_DIR + '/main.sass',
     ],
     output: {
         path: BUILD_DIR,
         filename: 'bundle.js'
     },
+    plugins: [
+
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery',
+            Popper: ['popper.js', 'default'],
+            // In case you imported plugins individually, you must also require them here:
+            Util: "exports-loader?Util!bootstrap/js/dist/util",
+            Dropdown: "exports-loader?Dropdown!bootstrap/js/dist/dropdown",
+
+        })
+
+    ],
     module: {
+
 
         rules: [
             {
-                test: /\.jsx?/,
+                test: /\.(jsx?|js)$/,
                 include: APP_DIR,
                 loader: 'babel-loader'
 
@@ -43,10 +58,30 @@ const config = {
                 }
             },
             {
-                test: /\.sass$/,
+                test: /\.(sass?|scss)$/,
                 loaders: ["style-loader", "css-loader", "sass-loader"]
+            },
 
-            }
+            {
+                test: /\.(scss)$/,
+                use: [{
+                    loader: 'style-loader', // inject CSS to page
+                }, {
+                    loader: 'css-loader', // translates CSS into CommonJS modules
+                }, {
+                    loader: 'postcss-loader', // Run post css actions
+                    options: {
+                        plugins: function () { // post css plugins, can be exported to postcss.config.js
+                            return [
+                                require('precss'),
+                                require('autoprefixer')
+                            ];
+                        }
+                    }
+                }, {
+                    loader: 'sass-loader' // compiles SASS to CSS
+                }]
+            },
 
         ],
     }
