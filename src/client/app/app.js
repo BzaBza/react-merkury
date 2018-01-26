@@ -1,14 +1,22 @@
 import React from 'react';
 import {render} from 'react-dom';
+import { Router, Route } from 'react-router';
+
+
+import createBrowserHistory from 'history/createBrowserHistory';
 import Login from "./components/smart/login/index";
-import Authentication from "./containers/authentication/authentication";
+import Register from "./components/smart/register/index";
+const customHistory = createBrowserHistory();
 
 class App extends React.Component {
     render () {
         return(
-            <div>
-               <Authentication/>
-            </div>
+            <Router history={customHistory}>
+                <div>
+                    <Route exact path ='/' component={Login}/>
+                    <Route exact path ='/register' component={Register}/>
+                </div>
+            </Router>
         )
     }
 }

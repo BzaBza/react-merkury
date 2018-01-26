@@ -12,6 +12,12 @@ const config = {
         path: BUILD_DIR,
         filename: 'bundle.js'
     },
+    devServer: {
+        contentBase: path.join(BUILD_DIR),
+        compress: true,
+        port: 8080,
+        historyApiFallback: true
+    },
     plugins: [
 
         new webpack.ProvidePlugin({
