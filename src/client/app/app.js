@@ -14,7 +14,7 @@ class App extends React.Component {
             <Router history={customHistory}>
                 <div>
                     <Route exact path ='/' component={Login}/>
-                    <Route exact path ='/register' component={Register}/>
+                    <Route exact path ='/registration' component={Register}/>
                 </div>
             </Router>
         )

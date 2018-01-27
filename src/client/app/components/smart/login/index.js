@@ -1,7 +1,6 @@
 import React from 'react';
 import AuthenticationHeader from "../../dumb/header/index";
 import Title from "../../dumb/title/index";
-import Input from "../../dumb/input/index";
 import MainButton from "../../dumb/main-button/index";
 
 
@@ -15,8 +14,8 @@ class Login extends React.Component {
                         <AuthenticationHeader/>
                         <Title title1='Welcome ' title2='back!'/>
                         <form action="#">
-                            <Input/>
-                            <Input/>
+                            <input/>
+                            <input/>
                             <MainButton type='submit' value='Enter >'/>
                         </form>
                     </div>
