@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { component } from 'react';
 import AuthenticationHeader from "../../dumb/header/index";
 import Title from "../../dumb/title/index";
 import MainButton from "../../dumb/main-button/index";
@@ -11,40 +11,48 @@ class Register extends React.Component {
         this.state = {
             email: '',
             login: '',
-            pass: '',
+            password: '',
             tel: ''
         };
+
         this.handelEmailChange = this.handelEmailChange.bind(this);
         this.handelPasswordChange = this.handelPasswordChange.bind(this);
         this.handelNumberChange = this.handelNumberChange.bind(this);
         this.handelLoginChange = this.handelLoginChange.bind(this);
-
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleSubmit(event) {
         event.preventDefault();
-        console.log('form is submitted!');
+        let userInfo = {
+            email: this.state.email,
+            login: this.state.login,
+            password: this.state.password,
+            tel: this.state.tel
+        };
+        let userData = JSON.stringify(userInfo);
+
+        localStorage.setItem('userData',
+                userData
+        );
     }
 
     handelEmailChange(event) {
-        console.log('email was changed', this);
         this.setState({email: event.target.value});
     };
 
     handelPasswordChange(event) {
-        console.log('Password was changed', this);
-        this.setState({pass: event.target.value});
+        this.setState({password: event.target.value});
     };
 
     handelNumberChange(event) {
-        console.log('Number was changed', this);
         this.setState({tel: event.target.value});
     };
 
     handelLoginChange(event) {
-        console.log('Login was changed', this);
         this.setState({login: event.target.value});
     };
+
 
     render() {
         return (
@@ -71,7 +79,7 @@ class Register extends React.Component {
                             <input
                                 type='password'
                                 placeholder="Password"
-                                value={this.state.pass}
+                                value={this.state.password}
                                 onChange={this.handelPasswordChange}
                                 className="row"
                             />
