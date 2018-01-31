@@ -10,7 +10,7 @@ class Register extends React.Component {
         super(props);
         this.state = {
             email: '',
-            login: '',
+            username: '',
             password: '',
             tel: ''
         };
@@ -26,14 +26,13 @@ class Register extends React.Component {
         event.preventDefault();
         let userInfo = {
             email: this.state.email,
-            login: this.state.login,
+            username: this.state.username,
             password: this.state.password,
             tel: this.state.tel
         };
         let userData = JSON.stringify(userInfo);
-
         localStorage.setItem('userData',
-                userData
+            userData
         );
     }
 
@@ -50,7 +49,7 @@ class Register extends React.Component {
     };
 
     handelLoginChange(event) {
-        this.setState({login: event.target.value});
+        this.setState({username: event.target.value});
     };
 
 
@@ -64,8 +63,8 @@ class Register extends React.Component {
                         <form onSubmit={this.handleSubmit}>
                             <input
                                 type='text'
-                                placeholder="Login"
-                                value={this.state.login}
+                                placeholder="Username"
+                                value={this.state.username}
                                 onChange={this.handelLoginChange}
                                 className="row"
                             />

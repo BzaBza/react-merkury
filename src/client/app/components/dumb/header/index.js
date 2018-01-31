@@ -1,15 +1,16 @@
 import React from 'react';
-import Logo from "../logo/index";
+import Logo from '../logo/index';
+import { Link } from 'react-router-dom';
 
 class AuthenticationHeader extends React.Component {
     render() {
         return (
             <header className="authentication-header d-flex justify-content-between align-items-center">
                 <Logo/>
-                <ul className="d-flex justify-content-around align-items-center">
-                    <li>Register</li>
-                    <li>Login</li>
-                </ul>
+                <div className="d-flex justify-content-between align-items-center">
+                    <Link to='/registration'>Register</Link>
+                    <Link to='/'>Login</Link>
+                </div>
             </header>
         )
     }

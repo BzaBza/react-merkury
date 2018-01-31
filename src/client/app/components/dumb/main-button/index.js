@@ -7,7 +7,7 @@ class MainButton extends React.Component {
 
         return (
             <div className="main-button  d-flex justify-content-center">
-                <button type = {this.props.type} className="button">{this.props.value}</button>
+                <button  type = {this.props.type} className="button btn btn-primary ">{this.props.value}</button>
             </div>
         )
     }

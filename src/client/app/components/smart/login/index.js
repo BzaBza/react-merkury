@@ -9,7 +9,7 @@ class Register extends React.Component {
     constructor(props) {
     super(props);
     this.state = {
-        login: '',
+        username: '',
         password: ''
 
     };
@@ -23,12 +23,12 @@ class Register extends React.Component {
     handleSubmit(event) {
         event.preventDefault();
         let userLoginInfo = {
-            login: this.state.login,
+            username: this.state.username,
             password: this.state.password
         };
         let userData = localStorage.getItem('userData');
         let userRegistrationData = JSON.parse(userData);
-        if (userLoginInfo.login === userRegistrationData.login && userRegistrationData.password === userLoginInfo.password) {
+        if (userLoginInfo.username === userRegistrationData.username && userRegistrationData.password === userLoginInfo.password) {
             console.log('EEEEBOY')
         }
     }
@@ -40,7 +40,7 @@ class Register extends React.Component {
 
 
     handelLoginChange(event) {
-        this.setState({login: event.target.value});
+        this.setState({username: event.target.value});
     };
 
     render() {
@@ -53,8 +53,8 @@ class Register extends React.Component {
                         <form onSubmit={this.handleSubmit}>
                             <input
                                 type='text'
-                                placeholder="Login"
-                                value={this.state.login}
+                                placeholder="Username"
+                                value={this.state.username}
                                 onChange={this.handelLoginChange}
                                 className="row"
                             />
