@@ -1,6 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
-import { Router, Route, Switch } from 'react-router';
+import {Router, Route, Switch} from 'react-router';
 
 import createBrowserHistory from 'history/createBrowserHistory';
 import Login from "./components/smart/login/index";
@@ -16,19 +16,20 @@ const customHistory = createBrowserHistory();
 
 class App extends React.Component {
 
-    render () {
-        return(
+    render() {
+        return (
             <Router history={customHistory}>
                 <div>
-                    <Route exact path ='/' component={Login}/>
-                    <Route  path ='/registration' component={Register}/>
-                    <Switch component={Navigation}>
-                        <Route  path ='/home' component={HomePage}/>
-                        <Route  path ='/calendar' component={Calendar}/>
-                        <Route  path ='/settings' component={Settings}/>
-                        <Route  path ='/statistics' component={Statistics}/>
-                        <Route  path ='/users' component={Users}/>
-                        <Route  path ='/workflow' component={Workflow}/>
+                    <Route exact path='/' component={Login}/>
+                    <Route path='/registration' component={Register}/>
+                    <Navigation/>
+                    <Switch>
+                        <Route path='/home' component={HomePage}/>
+                        <Route path='/calendar' component={Calendar}/>
+                        <Route path='/settings' component={Settings}/>
+                        <Route path='/statistics' component={Statistics}/>
+                        <Route path='/users' component={Users}/>
+                        <Route path='/workflow' component={Workflow}/>
                     </Switch>
                 </div>
             </Router>

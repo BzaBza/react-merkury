@@ -2,12 +2,6 @@ import React from 'react';
 import Login from "../../components/smart/login/index";
 import Register from "../../components/smart/register/index";
 
-import { Router, Route, Switch } from 'react-router-dom';
-
-import createBrowserHistory from 'history/createBrowserHistory';
-
-
-const customHistory = createBrowserHistory();
 
 class Authentication extends React.Component {
 
@@ -15,12 +9,8 @@ class Authentication extends React.Component {
         return (
             <section className="authentication-background d-flex justify-content-center align-items-center">
                 <div className="authentication-wrap col-md-6">
-                    <Router history={customHistory}>
-                        <Switch>
-                            <Route exact  path ='/login' component={Login}/>
-                            <Route path ='/register' component={Register}/>
-                        </Switch>
-                    </Router>
+                    <Login/>
+                    <Register/>
                 </div>
             </section>
         )

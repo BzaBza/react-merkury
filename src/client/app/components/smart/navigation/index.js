@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-
+import {Link} from 'react-router-dom';
+import Logo from "../../dumb/logo/index";
 
 
 class Navigation extends React.Component {
@@ -15,6 +15,7 @@ class Navigation extends React.Component {
         ];
         return (
             <aside>
+                <Logo/>
                 <nav>
                     <ul>
                         {menus.map((value, index) => {

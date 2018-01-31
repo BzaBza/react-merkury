@@ -5,7 +5,7 @@ class Settings extends React.Component {
 
     render() {
         return (
-            <section className=" d-flex justify-content-center align-items-center">
+            <section>
                 SETTINGS
             </section>
         )

@@ -1,11 +1,12 @@
 import React from 'react';
+import Navigation from "../../components/smart/navigation/index";
 
 
 class HomePage extends React.Component {
 
     render() {
         return (
-            <section className="authentication-background d-flex justify-content-center align-items-center">
+            <section>
                 <h1>HOMEPAGE</h1>
             </section>
         )
