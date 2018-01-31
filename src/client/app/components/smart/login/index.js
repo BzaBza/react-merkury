@@ -1,17 +1,16 @@
 import React from 'react';
-import AuthenticationHeader from "../../dumb/header/index";
-import Title from "../../dumb/title/index";
-import MainButton from "../../dumb/main-button/index";
+import AuthenticationHeader from '../../dumb/authentication-header/index';
+import Title from '../../dumb/title/index';
+import MainButton from '../../dumb/main-button/index';
 
 
-class Register extends React.Component {
+class Login extends React.Component {
 
     constructor(props) {
     super(props);
     this.state = {
         username: '',
-        password: ''
-
+        password: '',
     };
 
     this.handelPasswordChange = this.handelPasswordChange.bind(this);
@@ -28,9 +27,11 @@ class Register extends React.Component {
         };
         let userData = localStorage.getItem('userData');
         let userRegistrationData = JSON.parse(userData);
+
         if (userLoginInfo.username === userRegistrationData.username && userRegistrationData.password === userLoginInfo.password) {
-            console.log('EEEEBOY')
+            this.props.history.push("/home");
         }
+        else {}
     }
 
 
@@ -74,4 +75,4 @@ class Register extends React.Component {
     }
 }
 
-export default Register;
+export default Login;
