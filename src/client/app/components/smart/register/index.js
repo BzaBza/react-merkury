@@ -66,28 +66,28 @@ class Register extends React.Component {
                                 placeholder="Username"
                                 value={this.state.username}
                                 onChange={this.handelLoginChange}
-                                className="row"
+                                className="row authentication-input"
                             />
                             <input
                                 type='email'
                                 placeholder="Email"
                                 value={this.state.email}
                                 onChange={this.handelEmailChange}
-                                className="row"
+                                className="row authentication-input"
                             />
                             <input
                                 type='password'
                                 placeholder="Password"
                                 value={this.state.password}
                                 onChange={this.handelPasswordChange}
-                                className="row"
+                                className="row authentication-input"
                             />
                             <input
                                 type='tel'
                                 placeholder="Phone-number"
                                 value={this.state.tel}
                                 onChange={this.handelNumberChange}
-                                className="row"
+                                className="row authentication-input"
                             />
                             <MainButton type='submit' value='Enter >'/>
                         </form>

@@ -30,8 +30,9 @@ class Login extends React.Component {
 
         if (userLoginInfo.username === userRegistrationData.username && userRegistrationData.password === userLoginInfo.password) {
             this.props.history.push("/home");
+            this.props.username = userLoginInfo.username;
         }
-        else {}
+        else {alert('Login failed')}
     }
 
 
@@ -50,21 +51,21 @@ class Login extends React.Component {
                 <div className="authentication-wrap col-md-6">
                     <div className="d-flex justify-content-center flex-wrap">
                         <AuthenticationHeader/>
-                        <Title title1='LOGIN ' title2='!'/>
+                        <Title title1='Welcome ' title2='back!'/>
                         <form onSubmit={this.handleSubmit}>
                             <input
                                 type='text'
                                 placeholder="Username"
                                 value={this.state.username}
                                 onChange={this.handelLoginChange}
-                                className="row"
+                                className=" authentication-input"
                             />
                             <input
                                 type='password'
                                 placeholder="Password"
                                 value={this.state.password}
                                 onChange={this.handelPasswordChange}
-                                className="row"
+                                className=" authentication-input"
                             />
                             <MainButton type='submit' value='Enter >'/>
                         </form>
