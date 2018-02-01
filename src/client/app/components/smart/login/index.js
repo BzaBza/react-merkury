@@ -7,17 +7,17 @@ import MainButton from '../../dumb/main-button/index';
 class Login extends React.Component {
 
     constructor(props) {
-    super(props);
-    this.state = {
-        username: '',
-        password: '',
-    };
+        super(props);
+        this.state = {
+            username: '',
+            password: '',
+        };
 
-    this.handelPasswordChange = this.handelPasswordChange.bind(this);
-    this.handelLoginChange = this.handelLoginChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+        this.handelPasswordChange = this.handelPasswordChange.bind(this);
+        this.handelLoginChange = this.handelLoginChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
 
-}
+    }
 
     handleSubmit(event) {
         event.preventDefault();
@@ -32,7 +32,9 @@ class Login extends React.Component {
             this.props.history.push("/home");
             this.props.username = userLoginInfo.username;
         }
-        else {alert('Login failed')}
+        else {
+            alert('Login failed')
+        }
     }
 
 
@@ -48,28 +50,26 @@ class Login extends React.Component {
     render() {
         return (
             <section className="authentication-background d-flex justify-content-center align-items-center">
-                <div className="authentication-wrap col-md-6">
-                    <div className="d-flex justify-content-center flex-wrap">
-                        <AuthenticationHeader/>
-                        <Title title1='Welcome ' title2='back!'/>
-                        <form onSubmit={this.handleSubmit}>
-                            <input
-                                type='text'
-                                placeholder="Username"
-                                value={this.state.username}
-                                onChange={this.handelLoginChange}
-                                className=" authentication-input"
-                            />
-                            <input
-                                type='password'
-                                placeholder="Password"
-                                value={this.state.password}
-                                onChange={this.handelPasswordChange}
-                                className=" authentication-input"
-                            />
-                            <MainButton type='submit' value='Enter >'/>
-                        </form>
-                    </div>
+                <div className="authentication-wrap col-md-6 d-flex justify-content-center flex-wrap">
+                    <AuthenticationHeader/>
+                    <Title title1='Welcome ' title2='back!'/>
+                    <form onSubmit={this.handleSubmit} className="justify-content-center text-center">
+                        <input
+                            type='text'
+                            placeholder="Username"
+                            value={this.state.username}
+                            onChange={this.handelLoginChange}
+                            className="authentication-input"
+                        />
+                        <input
+                            type='password'
+                            placeholder="Password"
+                            value={this.state.password}
+                            onChange={this.handelPasswordChange}
+                            className="authentication-input "
+                        />
+                        <MainButton type='submit' value='Enter >'/>
+                    </form>
                 </div>
             </section>
         )

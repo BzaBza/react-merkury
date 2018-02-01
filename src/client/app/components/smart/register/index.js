@@ -60,34 +60,34 @@ class Register extends React.Component {
                     <div className="d-flex justify-content-center flex-wrap">
                         <AuthenticationHeader/>
                         <Title title1='Registration ' title2='!'/>
-                        <form onSubmit={this.handleSubmit}>
+                        <form onSubmit={this.handleSubmit}  className="justify-content-center">
                             <input
                                 type='text'
                                 placeholder="Username"
                                 value={this.state.username}
                                 onChange={this.handelLoginChange}
-                                className="row authentication-input"
+                                className="authentication-input"
                             />
                             <input
                                 type='email'
                                 placeholder="Email"
                                 value={this.state.email}
                                 onChange={this.handelEmailChange}
-                                className="row authentication-input"
+                                className="authentication-input"
                             />
                             <input
                                 type='password'
                                 placeholder="Password"
                                 value={this.state.password}
                                 onChange={this.handelPasswordChange}
-                                className="row authentication-input"
+                                className="authentication-input"
                             />
                             <input
                                 type='tel'
                                 placeholder="Phone-number"
                                 value={this.state.tel}
                                 onChange={this.handelNumberChange}
-                                className="row authentication-input"
+                                className="authentication-input"
                             />
                             <MainButton type='submit' value='Enter >'/>
                         </form>

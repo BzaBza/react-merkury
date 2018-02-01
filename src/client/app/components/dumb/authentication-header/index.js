@@ -7,10 +7,10 @@ class AuthenticationHeader extends React.Component {
         return (
             <header className="authentication-header d-flex justify-content-between align-items-center">
                 <Logo/>
-                <div className="d-flex justify-content-between align-items-center">
-                    <Link to='/registration'>Register</Link>
-                    <Link to='/'>Login</Link>
-                </div>
+                <ul className="d-flex align-items-center">
+                    <li><Link to='/registration'>Register</Link></li>
+                    <li><Link to='/'>Login</Link></li>
+                </ul>
             </header>
         )
     }
