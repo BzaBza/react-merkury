@@ -4,7 +4,16 @@ import Logo from "../../dumb/logo/index";
 
 
 class Navigation extends React.Component {
-
+    constructor(props) {
+        super(props);
+        this.state = {
+            navToggle: true
+        };
+        this.handleNavClick = this.handleNavClick.bind(this);
+    }
+    handleNavClick(event) {
+        this.setState({navToggle: !this.state.navToggle});
+    };
 
     render() {
         let menus = [
@@ -17,12 +26,12 @@ class Navigation extends React.Component {
         ];
 
         return (
-            <aside className="sidebar">
+            <aside  className={this.state.navToggle ? 'sidebar':'hiden'}>
                 <Logo/>
                 <nav>
                     <ul className="nav-list">
                         {menus.map((value, index) => {
-                            return <li key={index} className={value.name}>
+                            return <li key={index}>
                                 <Link to={value.path.toLowerCase()} className={value.linkName.toLowerCase()}>{value.linkName}</Link></li>
                         })}
                     </ul>
