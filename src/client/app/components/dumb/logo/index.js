@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Logo extends React.Component {
     render() {
         return (
-            <div className="logo">
-                <h1>Logo</h1>
+            <div className="logo-wrap">
+                <Link to='/home'><h1 className="logo"/></Link>
             </div>
         )
     }

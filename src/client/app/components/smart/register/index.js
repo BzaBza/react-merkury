@@ -1,5 +1,5 @@
 import React, { component } from 'react';
-import AuthenticationHeader from "../../dumb/authentication-header/index";
+import AuthenticationHeader from "../authentication-header/index";
 import Title from "../../dumb/title/index";
 import MainButton from "../../dumb/main-button/index";
 
