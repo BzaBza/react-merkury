@@ -5,7 +5,7 @@ class Workflow extends React.Component {
 
     render() {
         return (
-            <section>
+            <section className="containers">
                 WORKFLOW
             </section>
         )

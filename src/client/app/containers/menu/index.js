@@ -8,7 +8,7 @@ class Menus extends React.Component {
 
     render() {
         return (
-            <div className="d-flex">
+            <div className="d-flex menu">
                 <Navigation/>
                 <MainHeader/>
             </div>

@@ -18,24 +18,24 @@ class App extends React.Component {
 
     render() {
         return (
-                <Router history={customHistory}>
-                    <div>
-                        <Switch>
-                            <Route exact path='/' component={Login}/>
-                            <Route  path='/registration' component={Register}/>
-                            <Menus/>
-                        </Switch>
-                        <Switch>
-                            <Route path='/home' component={HomePage}/>
-                            <Route path='/calendar' component={Calendar}/>
-                            <Route path='/settings' component={Settings}/>
-                            <Route path='/statistics' component={Statistics}/>
-                            <Route path='/users' component={Users}/>
-                            <Route path='/workflow' component={Workflow}/>
-                        </Switch>
+            <Router history={customHistory}>
+                <div className="d-flex">
+                    <Switch>
+                        <Route exact path='/' component={Login}/>
+                        <Route path='/registration' component={Register}/>
+                        <Menus/>
+                    </Switch>
 
-                    </div>
-                </Router>
+                    <Switch>
+                        <Route path='/home' component={HomePage}/>
+                        <Route path='/calendar' component={Calendar}/>
+                        <Route path='/settings' component={Settings}/>
+                        <Route path='/statistics' component={Statistics}/>
+                        <Route path='/users' component={Users}/>
+                        <Route path='/workflow' component={Workflow}/>
+                    </Switch>
+                </div>
+            </Router>
         )
     }
 }

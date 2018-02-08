@@ -5,7 +5,7 @@ class Users extends React.Component {
 
     render() {
         return (
-            <section>
+            <section className="containers">
                 USERS
             </section>
         )

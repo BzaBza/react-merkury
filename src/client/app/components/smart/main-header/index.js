@@ -1,6 +1,7 @@
 import React from 'react';
 
 import FaSearch from 'react-icons/lib/fa/search';
+import GoTriangleLeft from 'react-icons/lib/go/triangle-left';
 import FaBars from 'react-icons/lib/fa/bars';
 import GoMail from 'react-icons/lib/go/mail';
 import TiBell from 'react-icons/lib/ti/bell';
@@ -28,11 +29,11 @@ class MainHeader extends React.Component {
 
     render() {
         return (
-            <header className="col-md-10">
-                <div className="main-header-wrap d-flex justify-content-between  col-md-12 align-content-center flex-wrap">
+            <header className="main-header-wrap">
+                <div className="main-header d-flex justify-content-between  align-content-center flex-wrap">
                     <div  className="d-flex">
                         <button type="button" className="drop-menu" onClick={this.handleNavClick}>
-                            <FaBars  className="icon"/>
+                         <GoTriangleLeft className="triangle-left"/>   <FaBars  className="icon"/>
                         </button>
                         <div className={this.state.navToggle ? 'hiden':''}>TOGLLEEE</div>
                         <button type="button" className="drop-menu" onClick={this.handleSearchClick}>
@@ -41,12 +42,13 @@ class MainHeader extends React.Component {
 
                         <input type="text" className={this.state.searchToggle ? 'hiden':''}/>
                     </div>
-                    <div className="d-flex flex-wrap">
+                    <div className="d-flex flex-wrap header-side-menu">
                         <MainButton value="+ Add project"/>
                         <button className="drop-menu"><GoMail className="icon"/></button>
                         <button className="drop-menu"><TiBell className="icon"/></button>
                         <UserMenu/>
                     </div>
+                    <button type="button" className="header-side-menu-drop"/>
                 </div>
             </header>
         )

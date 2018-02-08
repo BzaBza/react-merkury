@@ -34,7 +34,6 @@ class Login extends React.Component {
 
         if (userLoginInfo.username === userRegistrationData.username && userRegistrationData.password === userLoginInfo.password) {
             this.props.history.push("/home");
-            this.props.username = userLoginInfo.username;
         }
         else {
             alert('Login failed')

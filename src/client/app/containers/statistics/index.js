@@ -5,7 +5,7 @@ class Statistics extends React.Component {
 
     render() {
         return (
-            <section>
+            <section className="containers">
                 STATISTICS
             </section>
         )
