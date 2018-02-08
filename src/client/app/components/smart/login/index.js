@@ -1,4 +1,8 @@
 import React from 'react';
+
+import MdAccountCircle from 'react-icons/lib/md/account-circle';
+import MdHttps from 'react-icons/lib/md/https';
+
 import AuthenticationHeader from '../authentication-header/index';
 import Title from '../../dumb/title/index';
 import MainButton from '../../dumb/main-button/index';
@@ -54,20 +58,26 @@ class Login extends React.Component {
                     <AuthenticationHeader/>
                     <Title title1='Welcome ' title2='back!'/>
                     <form onSubmit={this.handleSubmit} className="justify-content-center text-center">
-                        <input
-                            type='text'
-                            placeholder="Username"
-                            value={this.state.username}
-                            onChange={this.handelLoginChange}
-                            className="authentication-input"
-                        />
-                        <input
-                            type='password'
-                            placeholder="Password"
-                            value={this.state.password}
-                            onChange={this.handelPasswordChange}
-                            className="authentication-input "
-                        />
+                        <div className="d-flex inputs">
+                            <MdAccountCircle className="authentication-icon"/>
+                            <input
+                                type='text'
+                                placeholder="Username"
+                                value={this.state.username}
+                                onChange={this.handelLoginChange}
+                                className="authentication-input"
+                            />
+                        </div>
+                        <div className="d-flex inputs">
+                            <MdHttps className="authentication-icon"/>
+                            <input
+                                type='password'
+                                placeholder="Password"
+                                value={this.state.password}
+                                onChange={this.handelPasswordChange}
+                                className="authentication-input "
+                            />
+                        </div>
                         <MainButton type='submit' value='Enter >'/>
                     </form>
                 </div>
