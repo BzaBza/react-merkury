@@ -15,6 +15,12 @@ import Menus from "./containers/menu/index";
 const customHistory = createBrowserHistory();
 
 class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            userData:JSON.parse(localStorage.getItem('userData'))
+        };
+    }
 
     render() {
         return (
@@ -27,7 +33,7 @@ class App extends React.Component {
                     </Switch>
 
                     <Switch>
-                        <Route path='/home' component={HomePage}/>
+                        <Route path='/home' render={(routeProps)=><HomePage routeProps={routeProps} userData={this.state.userData}/>}/>
                         <Route path='/calendar' component={Calendar}/>
                         <Route path='/settings' component={Settings}/>
                         <Route path='/statistics' component={Statistics}/>
