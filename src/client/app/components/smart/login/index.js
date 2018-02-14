@@ -2,10 +2,11 @@ import React from 'react';
 
 import MdAccountCircle from 'react-icons/lib/md/account-circle';
 import MdHttps from 'react-icons/lib/md/https';
+import FaAngleRight from 'react-icons/lib/fa/angle-right';
 
 import AuthenticationHeader from '../authentication-header/index';
 import Title from '../../dumb/title/index';
-import MainButton from '../../dumb/main-button/index';
+
 
 
 class Login extends React.Component {
@@ -15,6 +16,7 @@ class Login extends React.Component {
         this.state = {
             username: '',
             password: '',
+            submit: false
         };
 
         this.handelPasswordChange = this.handelPasswordChange.bind(this);
@@ -25,12 +27,13 @@ class Login extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        let userLoginInfo = {
+        this.state.submit = !this.state.submit;
+        const userLoginInfo = {
             username: this.state.username,
             password: this.state.password
         };
-        let userData = localStorage.getItem('userData');
-        let userRegistrationData = JSON.parse(userData);
+        const userData = localStorage.getItem('userData');
+        const userRegistrationData = JSON.parse(userData);
 
         if (userLoginInfo.username === userRegistrationData.username && userRegistrationData.password === userLoginInfo.password) {
             this.props.history.push("/home");
@@ -56,7 +59,7 @@ class Login extends React.Component {
                 <div className="authentication-wrap col-md-6 d-flex justify-content-center flex-wrap">
                     <AuthenticationHeader/>
                     <Title title1='Welcome ' title2='back!'/>
-                    <form onSubmit={this.handleSubmit} className="justify-content-center text-center">
+                    <form onSubmit={this.handleSubmit} className="justify-content-center text-center col-6">
                         <div className="d-flex inputs">
                             <MdAccountCircle className="authentication-icon"/>
                             <input
@@ -77,7 +80,7 @@ class Login extends React.Component {
                                 className="authentication-input "
                             />
                         </div>
-                        <MainButton type='submit' value='Enter >'/>
+                        <button type="submit" className="button btn btn-primary authentication-button">Enter <FaAngleRight className="authentication-button-icon"/></button>
                     </form>
                 </div>
             </section>

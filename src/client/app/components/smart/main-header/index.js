@@ -6,7 +6,6 @@ import FaBars from 'react-icons/lib/fa/bars';
 import GoMail from 'react-icons/lib/go/mail';
 import TiBell from 'react-icons/lib/ti/bell';
 
-import MainButton from "../../dumb/main-button/index";
 import UserMenu from "../../dumb/user-menu/index";
 
 class MainHeader extends React.Component {
@@ -43,7 +42,7 @@ class MainHeader extends React.Component {
                         <input type="text" className={this.state.searchToggle ? 'hiden':''}/>
                     </div>
                     <div className="d-flex flex-wrap header-side-menu">
-                        <MainButton value="+ Add project"/>
+                        <button type="submit" className="button btn btn-primary">+ Add project</button>
                         <button className="drop-menu"><GoMail className="icon"/></button>
                         <button className="drop-menu"><TiBell className="icon"/></button>
                         <UserMenu/>

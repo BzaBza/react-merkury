@@ -5,9 +5,9 @@ import TiAt from 'react-icons/lib/ti/at';
 import MdAccountCircle from 'react-icons/lib/md/account-circle';
 import MdCallEnd from 'react-icons/lib/md/call-end';
 import MdHttps from 'react-icons/lib/md/https';
+import FaAngleRight from 'react-icons/lib/fa/angle-right';
 
 import Title from "../../dumb/title/index";
-import MainButton from "../../dumb/main-button/index";
 
 
 class Register extends React.Component {
@@ -30,13 +30,13 @@ class Register extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        let userInfo = {
+        const userInfo = {
             email: this.state.email,
             username: this.state.username,
             password: this.state.password,
             tel: this.state.tel
         };
-        let userData = JSON.stringify(userInfo);
+        const userData = JSON.stringify(userInfo);
         localStorage.setItem('userData',
             userData
         );
@@ -66,7 +66,7 @@ class Register extends React.Component {
                     <div className="d-flex justify-content-center flex-wrap">
                         <AuthenticationHeader/>
                         <Title title1='Registration ' title2='!'/>
-                        <form onSubmit={this.handleSubmit}  className="justify-content-center">
+                        <form onSubmit={this.handleSubmit}  className="justify-content-center text-center col-6">
                            <div className="d-flex inputs">
                                <MdAccountCircle className="authentication-icon"/>
                                <input
@@ -107,7 +107,7 @@ class Register extends React.Component {
                                     className="authentication-input"
                                 />
                             </div>
-                            <MainButton type='submit' value='Enter >'/>
+                            <button type="submit" className="button btn btn-primary authentication-button">Enter <FaAngleRight className="authentication-button-icon"/></button>
                         </form>
                     </div>
                 </div>

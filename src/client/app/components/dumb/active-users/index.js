@@ -1,5 +1,5 @@
 import React from 'react'
-import {LineChart, Line, YAxis, CartesianGrid} from 'recharts';
+import {ResponsiveContainer, LineChart, Line, YAxis, CartesianGrid} from 'recharts';
 const data = [
     {name: 'Page A', uv: 4000, pv: 2400, amt: 2400},
     {name: 'Page B', uv: 3000, pv: 1398, amt: 2210},
@@ -16,11 +16,13 @@ class ActiveUsers extends React.Component {
 
     render() {
         return (
+            <ResponsiveContainer width={600} height={300}>
             <LineChart width={600} height={300} data={data}>
                 <Line type="monotone" dataKey="uv" stroke="#8884d8" />
                 <CartesianGrid stroke="#ccc" />
                 <YAxis />
             </LineChart>
+            </ResponsiveContainer>
 
         )
     }

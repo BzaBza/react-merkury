@@ -18,11 +18,17 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            userData:JSON.parse(localStorage.getItem('userData'))
+            userData: {}
         };
+        this.setUserData = this.setUserData.bind(this);
+    }
+
+    setUserData(userLoginInfo){
+        this.setState({ userData: userLoginInfo});
     }
 
     render() {
+
         return (
             <Router history={customHistory}>
                 <div className="d-flex">

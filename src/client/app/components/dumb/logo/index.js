@@ -5,7 +5,7 @@ class Logo extends React.Component {
     render() {
         return (
             <div className="logo-wrap">
-                <Link to='/home'><h1 className="logo"/></Link>
+                <h1 className="logo"/>
             </div>
         )
     }
