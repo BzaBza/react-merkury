@@ -13,7 +13,7 @@ class Tasks extends React.Component {
             {taskName: 'New logo for JCD.pl', days: '10 days left'},
         ];
         return (
-            <section className="home-component col-md-4">
+            <section className="home-component">
                 <div className="tasks-title">
                     <p>Tasks</p>
                 </div>
@@ -25,7 +25,7 @@ class Tasks extends React.Component {
                                 <p>{value.taskName}</p>
                                 <p className="col-md-12">{value.days}</p>
                             </div>
-                            <button type="button" className="tasks-button"><FaEllipsisV  big className="tasks-button-icon"/></button>
+                            <button type="button" className="tasks-button"><FaEllipsisV className="tasks-button-icon"/></button>
                         </li>
                     })}
                 </ul>

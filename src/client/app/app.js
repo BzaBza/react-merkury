@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {render} from 'react-dom';
 import {Router, Route, Switch} from 'react-router-dom';
 
@@ -14,17 +14,17 @@ import Workflow from "./containers/workfow/index";
 import Menus from "./containers/menu/index";
 const customHistory = createBrowserHistory();
 
-class App extends React.Component {
+class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
             userData: {}
         };
-        this.setUserData = this.setUserData.bind(this);
+        this.setRootUserData = this.setRootUserData.bind(this);
     }
 
-    setUserData(userLoginInfo){
-        this.setState({ userData: userLoginInfo});
+    setRootUserData(userData){
+        this.setState({ userData: userData});
     }
 
     render() {
@@ -33,7 +33,7 @@ class App extends React.Component {
             <Router history={customHistory}>
                 <div className="d-flex">
                     <Switch>
-                        <Route exact path='/' component={Login}/>
+                        <Route exact path='/' render={(routeProps)=><Login routeProps={routeProps} setRootUserData={this.setRootUserData}/>}/>
                         <Route path='/registration' component={Register}/>
                         <Menus/>
                     </Switch>

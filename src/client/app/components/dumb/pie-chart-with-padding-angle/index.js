@@ -1,35 +1,45 @@
-import React from 'react'
-import {ResponsiveContainer, PieChart, Pie, Cell} from 'recharts';
+import React, {Component} from 'react';
+import {Doughnut} from 'react-chartjs-2';
 
-const data = [{name: 'Group A', value: 400}, {name: 'Group B', value: 300},
-    {name: 'Group C', value: 300}, {name: 'Group D', value: 200}];
-const COLORS = ['#5584ff', '#25396e', '#3755a4', '#4164c2'];
+class UserSales extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            labels: [
+                'Websites',
+                'Logo',
+                'Social Media',
+                'Adwords'
+            ],
+            datasets: [{
+                data: [300, 50, 100, 20],
+                backgroundColor: [
+                    '#5584ff',
+                    '#25396e',
+                    '#3755a4',
+                    '#4b74e0'
+                ],
+            }]
+        }
+    }
 
-
-class UserSales extends React.Component {
 
     render() {
         return (
-            <ResponsiveContainer width='100%' height={302}>
-                <PieChart width={302} height={302} onMouseEnter={this.onPieEnter} className="align-items-center">
-                    <Pie
-                        data={data}
-                        cx={120}
-                        cy={140}
-
-                        innerRadius={60}
-                        outerRadius={110}
-                        fill="#8884d8"
-                        paddingAngle={0}
-                    >
-                        {
-                            data.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
+            <div className="chart">
+                <Doughnut
+                    data={this.state}
+                    height={320}
+                    width={720}
+                    options={{
+                        legend:{
+                            position:'right'
                         }
-                    </Pie>
-                </PieChart>
-            </ResponsiveContainer>
-
-        )
+                    }}
+                />
+            </div>
+        );
     }
 }
+
 export default UserSales;

@@ -15,20 +15,10 @@ class Sales extends React.Component {
             <section className="home-component">
                 <div className="d-flex justify-content-around align-items-center">
                     <h3 className="home-title">Your Sales</h3>
-                    <div className="sales text-center">
-                        <h3>{this.state.sales}</h3>
-                        <p>Sales</p>
-                    </div>
                     <DropPeriod/>
                 </div>
                <div className="d-flex align-items-center">
                    <UserSales/>
-                   <ul className="sales-list align-items-center">
-                       <li>Websites</li>
-                       <li>Logo</li>
-                       <li>Social Media</li>
-                       <li>Adwords</li>
-                   </ul>
                </div>
             </section>
         )

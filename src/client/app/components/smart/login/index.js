@@ -16,7 +16,6 @@ class Login extends React.Component {
         this.state = {
             username: '',
             password: '',
-            submit: false
         };
 
         this.handelPasswordChange = this.handelPasswordChange.bind(this);
@@ -27,16 +26,15 @@ class Login extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        this.state.submit = !this.state.submit;
         const userLoginInfo = {
             username: this.state.username,
             password: this.state.password
         };
-        const userData = localStorage.getItem('userData');
-        const userRegistrationData = JSON.parse(userData);
+        const userData = JSON.parse(localStorage.getItem('userData'));
 
-        if (userLoginInfo.username === userRegistrationData.username && userRegistrationData.password === userLoginInfo.password) {
-            this.props.history.push("/home");
+        if (userLoginInfo.username === userData.username && userData.password === userLoginInfo.password) {
+            this.props.setRootUserData(userData);
+            this.props.routeProps.history.push("/home");
         }
         else {
             alert('Login failed')
