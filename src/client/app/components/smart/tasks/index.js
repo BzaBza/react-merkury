@@ -1,5 +1,5 @@
 import React, { component } from 'react';
-import FaEllipsisV from 'react-icons/lib/fa/ellipsis-v'
+import FaEllipsisV from 'react-icons/lib/fa/ellipsis-v';
 
 
 

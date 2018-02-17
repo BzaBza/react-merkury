@@ -42,14 +42,23 @@ class Navigation extends React.Component {
 
     render() {
 
+       let menus = [
+            {linkName: 'Home', path: '/home'},
+            {linkName: 'Workflow', path: '/Workflow'},
+            {linkName: 'Statistics', path: '/Statistics'},
+            {linkName: 'Calendar', path: '/Calendar'},
+            {linkName: 'Users', path: '/Users'},
+            {linkName: 'Settings', path: '/Settings'}
+        ];
+
         return (
             <aside className={this.state.navToggle ? 'sidebar' : 'hiden'}>
                 <Logo/>
                 <nav>
                     <ul className="nav-list">
-                        {this.state.menus.map((value, index) => {
+                        {menus.map((value, index) => {
                             return <li key={index}>
-                                <Link to={value.path.toLowerCase()} onClick={this.addActive}
+                                <Link to={value.path.toLowerCase()}
                                       className={value.linkName.toLowerCase()} >{value.linkName}</Link></li>
                         })}
                     </ul>
