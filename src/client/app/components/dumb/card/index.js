@@ -1,23 +1,29 @@
-import React, { Component } from 'react';
-import { findDOMNode } from 'react-dom';
-import { DragSource, DropTarget } from 'react-dnd';
+import React, {Component} from 'react';
+import {findDOMNode} from 'react-dom';
+import {DragSource, DropTarget} from 'react-dnd';
 import flow from 'lodash/flow';
+import FaEllipsisV from 'react-icons/lib/fa/ellipsis-v';
 
 class Card extends Component {
 
     render() {
-        const { card, isDragging, connectDragSource, connectDropTarget } = this.props;
+        const {card, isDragging, connectDragSource, connectDropTarget} = this.props;
         const opacity = isDragging ? 0 : 1;
 
         return connectDragSource(connectDropTarget(
-            <div style={{
-                border: '1px dashed gray',
-                padding: '0.5rem 1rem',
-                margin: '.5rem',
-                backgroundColor: 'white',
+            <div  className="d-flex justify-content-between align-items-center"
+                style={{
+                border: '1px solid gray',
                 cursor: 'move',
-                opacity }}>
-                {card.text}
+                opacity
+            }}>
+                <div className="tasks-side-image align-items-center"><p>{card.text.charAt(0)}</p></div>
+                <div className="d-flex flex-wrap align-items-center">
+                    <p>{card.text}</p>
+                    <p className="col-md-12">{card.days}</p>
+                </div>
+                <button type="button" className="tasks-button"><FaEllipsisV className="tasks-button-icon"/>
+                </button>
             </div>
         ));
     }
@@ -37,7 +43,7 @@ const cardSource = {
         const item = monitor.getItem();
         const dropResult = monitor.getDropResult();
 
-        if ( dropResult && dropResult.listId !== item.listId ) {
+        if (dropResult && dropResult.listId !== item.listId) {
             props.removeCard(item.index);
         }
     }
@@ -82,7 +88,7 @@ const cardTarget = {
         }
 
         // Time to actually perform the action
-        if ( props.listId === sourceListId ) {
+        if (props.listId === sourceListId) {
             props.moveCard(dragIndex, hoverIndex);
 
             // Note: we're mutating the monitor item here!
