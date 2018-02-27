@@ -19,9 +19,11 @@ class MainHeader extends React.Component {
         this.handleSearchClick = this.handleSearchClick.bind(this);
     }
 
-    handleNavClick(event) {
+    handleNavClick() {
         this.setState({navToggle: !this.state.navToggle});
+        this.props.handleClick(this.state.navToggle)
     };
+
     handleSearchClick(event) {
         this.setState({searchToggle: !this.state.searchToggle});
     };
@@ -34,7 +36,6 @@ class MainHeader extends React.Component {
                         <button type="button" className="drop-menu" onClick={this.handleNavClick}>
                          <GoTriangleLeft className="triangle-left"/>   <FaBars  className="icon"/>
                         </button>
-                        <div className={this.state.navToggle ? 'hiden':''}>TOGLLEEE</div>
                         <button type="button" className="drop-menu" onClick={this.handleSearchClick}>
                             <FaSearch className="icon"/>
                         </button>

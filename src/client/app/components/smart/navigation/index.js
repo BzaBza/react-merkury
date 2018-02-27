@@ -7,7 +7,7 @@ class Navigation extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            navToggle: true,
+            navToggle: false,
             menus: [
                 {linkName: 'Home', path: '/home'},
                 {linkName: 'Workflow', path: '/Workflow'},
@@ -22,7 +22,7 @@ class Navigation extends React.Component {
         // this.addActive = this.addActive.bind(this);
     }
 
-    handleNavClick(event) {
+    handleNavClick(navToggle) {
         this.setState({navToggle: !this.state.navToggle});
     };
 
@@ -52,7 +52,7 @@ class Navigation extends React.Component {
         ];
 
         return (
-            <aside className={this.state.navToggle ? 'sidebar' : 'hiden'}>
+            <aside className={this.props.navToggle ? 'hiden' : 'sidebar'}>
                 <Logo/>
                 <nav>
                     <ul className="nav-list">

@@ -7,19 +7,22 @@ class Menus extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            navToggle: true,
+            navToggle: false,
         };
-        this.handleNav = this.handleNav.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
-    handleNav(handleNavClick) {
-        this.setState({navToggle: !this.state.navToggle});
+
+    handleClick(navToggle) {
+        this.setState({navToggle: navToggle});
     };
 
     render() {
         return (
             <div className="d-flex menu">
-                <Navigation handleNav={this.handleNavClick}/>
-                <MainHeader/>
+                <aside className={this.state.navToggle ? 'hiden' : 'sidebar'}>
+                    <Navigation />
+                </aside>
+                <MainHeader handleClick={this.handleClick}/>
             </div>
         )
     }
