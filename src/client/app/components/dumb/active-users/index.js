@@ -5,7 +5,7 @@ class ActiveUsers extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            labels: false,
             datasets: [
                 {
                     fill: false,

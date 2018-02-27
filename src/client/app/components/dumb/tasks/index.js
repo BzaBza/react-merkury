@@ -13,7 +13,7 @@ class Tasks extends React.Component {
             {taskName: 'New logo for JCD.pl', days: '10 days left'},
         ];
         return (
-            <section className="home-component">
+            <section className="home-component bottom-list">
                 <div className="tasks-title">
                     <p>Tasks</p>
                 </div>

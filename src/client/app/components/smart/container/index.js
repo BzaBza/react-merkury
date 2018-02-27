@@ -50,7 +50,7 @@ class Container extends Component {
         const backgroundColor = isActive ? 'lightgreen' : '#FFF';
 
         return connectDropTarget(
-            <div style={{backgroundColor}}>
+            <div style={{   backgroundColor}}>
                 {cards.map((card, i) => {
                     return (
                         <Card

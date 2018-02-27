@@ -23,6 +23,7 @@
     "popper.js": "^1.12.9",
     "postcss-loader": "^2.0.10",
     "react": "^16.2.0",
+    "react-big-calendar": "^0.18.0",
     "react-chartjs-2": "^2.7.0",
     "react-dnd": "^2.5.4",
     "react-dnd-html5-backend": "^2.5.4",
