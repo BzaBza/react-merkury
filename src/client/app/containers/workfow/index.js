@@ -25,21 +25,30 @@ class Workflow extends Component {
             {id: 5,text: 'New website for Symu.co', days: '5 days delays'},
             {id: 6,text: 'Free business PSD Template ', days: '2 days delays'},
             {id: 7,text: 'New logo for JCD.pl', days: '5 days left'},
-            {id: 8,text: 'New logo for JCD.pl', days: '10 days left'}
         ];
 
         const listThree = [
             {id: 9,text: 'New website for Symu.co', days: '5 days delays'},
             {id: 10,text: 'Free business PSD Template ', days: '2 days delays'},
             {id: 11,text: 'New logo for JCD.pl', days: '5 days left'},
-            {id: 12,text: 'New logo for JCD.pl', days: '10 days left'}
+            {id: 12,text: 'New logo for JCD.pl', days: '10 days left'},
+            {id: 13,text: 'New logo for JCD.pl', days: '11 days left'}
         ];
 
         return (
             <div style={style} className="containers">
-                <Container id={1} list={listOne} />
-                <Container id={2} list={listTwo} />
-                <Container id={3} list={listThree} />
+                <div>
+                    <h3>To Do <span className="gray">({listOne.length})</span></h3>
+                    <Container id={1} list={listOne} />
+                </div>
+                <div>
+                    <h3>In Progress <span className="gray">({listTwo.length})</span></h3>
+                    <Container id={2} list={listTwo} />
+                </div>
+                <div>
+                    <h3>Completed <span className="gray">({listThree.length})</span></h3>
+                    <Container id={3} list={listThree} />
+                </div>
             </div>
         );
     }

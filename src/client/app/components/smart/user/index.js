@@ -1,7 +1,6 @@
 import React, {component} from 'react';
 import FaEllipsisV from 'react-icons/lib/fa/ellipsis-v';
 
-
 class User extends React.Component {
     constructor(props) {
         super(props);
@@ -9,7 +8,6 @@ class User extends React.Component {
             users: 128,
         };
     }
-
 
     render() {
         let menus = [
