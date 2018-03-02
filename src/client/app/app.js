@@ -3,8 +3,6 @@ import {render} from 'react-dom';
 import {Router, Route, Switch} from 'react-router-dom';
 
 import createBrowserHistory from 'history/createBrowserHistory';
-import Login from "./components/smart/login/index";
-import Register from "./components/smart/register/index";
 import HomePage from "./containers/home-page/index";
 import Calendar from "./containers/calendar/index";
 import Settings from "./containers/settings/index";
