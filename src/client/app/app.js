@@ -11,7 +11,8 @@ import Settings from "./containers/settings/index";
 import Statistics from "./containers/statistics/index";
 import Users from "./containers/users/index";
 import Workflow from "./containers/workfow/index";
-import Menus from "./containers/menu/index";
+import Navigation from "./components/smart/navigation/index";
+import MainHeader from "./components/smart/main-header/index";
 const customHistory = createBrowserHistory();
 
 class App extends Component {
@@ -23,8 +24,8 @@ class App extends Component {
         this.setRootUserData = this.setRootUserData.bind(this);
     }
 
-    setRootUserData(userData){
-        this.setState({ userData: userData});
+    setRootUserData(userData) {
+        this.setState({userData: userData});
     }
 
     render() {
@@ -32,14 +33,14 @@ class App extends Component {
         return (
             <Router history={customHistory}>
                 <div className="d-flex">
+                    <Route exact path='/' render={(routeProps) => <Login routeProps={routeProps}
+                                                                         setRootUserData={this.setRootUserData}/>}/>
+                    <Route path='/registration' component={Register}/>
+                    <Route strict path='/:page' component={Navigation}/>
+                    <Route strict path='/:page' component={MainHeader}/>
                     <Switch>
-                        <Route exact path='/' render={(routeProps)=><Login routeProps={routeProps} setRootUserData={this.setRootUserData}/>}/>
-                        <Route path='/registration' component={Register}/>
-                        <Menus/>
-                    </Switch>
-
-                    <Switch>
-                        <Route path='/home' render={(routeProps)=><HomePage routeProps={routeProps} userData={this.state.userData}/>}/>
+                        <Route path='/home' render={(routeProps) => <HomePage routeProps={routeProps}
+                                                                              userData={this.state.userData}/>}/>
                         <Route path='/calendar' component={Calendar}/>
                         <Route path='/settings' component={Settings}/>
                         <Route path='/statistics' component={Statistics}/>

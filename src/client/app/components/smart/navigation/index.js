@@ -52,7 +52,7 @@ class Navigation extends React.Component {
         ];
 
         return (
-            <aside className={this.props.navToggle ? 'hiden' : 'sidebar'}>
+            <aside className='sidebar'>
                 <Logo/>
                 <nav>
                     <ul className="nav-list">

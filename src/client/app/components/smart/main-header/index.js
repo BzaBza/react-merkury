@@ -24,7 +24,7 @@ class MainHeader extends React.Component {
         this.props.handleClick(this.state.navToggle)
     };
 
-    handleSearchClick(event) {
+    handleSearchClick() {
         this.setState({searchToggle: !this.state.searchToggle});
     };
 
