@@ -4,7 +4,6 @@ import MdAccountCircle from 'react-icons/lib/md/account-circle';
 import MdHttps from 'react-icons/lib/md/https';
 import FaAngleRight from 'react-icons/lib/fa/angle-right';
 
-import AuthenticationHeader from '../authentication-header/index';
 import Title from '../../dumb/title/index';
 
 
@@ -34,7 +33,7 @@ class Login extends React.Component {
 
         if (userLoginInfo.username === userData.username && userData.password === userLoginInfo.password) {
             this.props.setRootUserData(userData);
-            this.props.routeProps.history.push("/home");
+            this.props.routeProps.history.push('/home')
         }
         else {
             alert('Login failed')
@@ -53,9 +52,8 @@ class Login extends React.Component {
 
     render() {
         return (
-            <section className="authentication-background d-flex justify-content-center align-items-center">
-                <div className="authentication-wrap col-md-6 d-flex justify-content-center flex-wrap">
-                    <AuthenticationHeader/>
+            <section>
+                <div className="authentication-wrap d-flex justify-content-center flex-wrap">
                     <Title title1='Welcome ' title2='back!'/>
                     <form onSubmit={this.handleSubmit} className="justify-content-center text-center col-6">
                         <div className="d-flex inputs">

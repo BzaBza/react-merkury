@@ -8,14 +8,6 @@ class Navigation extends React.Component {
         super(props);
         this.state = {
             navToggle: false,
-            menus: [
-                {linkName: 'Home', path: '/home'},
-                {linkName: 'Workflow', path: '/Workflow'},
-                {linkName: 'Statistics', path: '/Statistics'},
-                {linkName: 'Calendar', path: '/Calendar'},
-                {linkName: 'Users', path: '/Users'},
-                {linkName: 'Settings', path: '/Settings'}
-            ],
         };
 
         this.handleNavClick = this.handleNavClick.bind(this);

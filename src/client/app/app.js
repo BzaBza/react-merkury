@@ -13,6 +13,7 @@ import Users from "./containers/users/index";
 import Workflow from "./containers/workfow/index";
 import Navigation from "./components/smart/navigation/index";
 import MainHeader from "./components/smart/main-header/index";
+import Sign from "./containers/sign/index";
 const customHistory = createBrowserHistory();
 
 class App extends Component {
@@ -21,10 +22,10 @@ class App extends Component {
         this.state = {
             userData: {}
         };
-        this.setRootUserData = this.setRootUserData.bind(this);
+        this.setUserData = this.setUserData.bind(this);
     }
 
-    setRootUserData(userData) {
+    setUserData(userData) {
         this.setState({userData: userData});
     }
 
@@ -33,9 +34,8 @@ class App extends Component {
         return (
             <Router history={customHistory}>
                 <div className="d-flex">
-                    <Route exact path='/' render={(routeProps) => <Login routeProps={routeProps}
-                                                                         setRootUserData={this.setRootUserData}/>}/>
-                    <Route path='/registration' component={Register}/>
+                        <Route exact path='/' render={(routeProps) => <Sign routeProps={routeProps}
+                                                                            setUserData={this.setUserData}/>}/>
                     <Route strict path='/:page' component={Navigation}/>
                     <Route strict path='/:page' component={MainHeader}/>
                     <Switch>

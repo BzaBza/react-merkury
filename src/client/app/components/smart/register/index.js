@@ -1,5 +1,4 @@
 import React, { component } from 'react';
-import AuthenticationHeader from "../authentication-header/index";
 
 import TiAt from 'react-icons/lib/ti/at';
 import MdAccountCircle from 'react-icons/lib/md/account-circle';
@@ -61,10 +60,9 @@ class Register extends React.Component {
 
     render() {
         return (
-            <section className="authentication-background d-flex justify-content-center align-items-center">
-                <div className="authentication-wrap col-md-6">
+            <section>
+                <div className="authentication-wrap">
                     <div className="d-flex justify-content-center flex-wrap">
-                        <AuthenticationHeader/>
                         <Title title1='Registration ' title2='!'/>
                         <form onSubmit={this.handleSubmit}  className="justify-content-center text-center col-6">
                            <div className="d-flex inputs">
