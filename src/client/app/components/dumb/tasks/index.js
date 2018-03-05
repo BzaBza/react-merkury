@@ -1,9 +1,17 @@
-import React, { component } from 'react';
+import React, {component} from 'react';
 import FaEllipsisV from 'react-icons/lib/fa/ellipsis-v';
 
 
-
 class Tasks extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            taskData: {
+                taskDaysDelays: '2',
+                taskDaysLeft: '5'
+            }
+        };
+    }
 
     render() {
         let menus = [
@@ -14,18 +22,28 @@ class Tasks extends React.Component {
         ];
         return (
             <section className="home-component bottom-list">
-                <div className="tasks-title">
+                <div className="tasks-title d-flex justify-content-between">
                     <p>Tasks</p>
+                    <p>
+                        <span
+                            className="tasks-side-image align-items-center">{this.state.taskData.taskDaysDelays}</span><span
+                        className="tasks-side-image align-items-center">{this.state.taskData.taskDaysLeft}</span>
+                    </p>
+
                 </div>
                 <ul className="tasks-list">
                     {menus.map((value, index) => {
                         return <li key={index} className="d-flex justify-content-between align-items-center">
                             <div className="d-flex flex-wrap align-items-center">
-                                <div className="tasks-side-image align-items-center"><p>{value.taskName.charAt(0)}</p></div>
-                                <p>{value.taskName}</p>
-                                <p className="col-md-12">{value.days}</p>
+                                <div className="tasks-side-image align-items-center"><p>{value.taskName.charAt(0)}</p>
+                                </div>
+                                <div className="text-left">
+                                    <p>{value.taskName}</p>
+                                    <p className="col-md-12">{value.days}</p>
+                                </div>
                             </div>
-                            <button type="button" className="tasks-button"><FaEllipsisV className="tasks-button-icon"/></button>
+                            <button type="button" className="tasks-button"><FaEllipsisV className="tasks-button-icon"/>
+                            </button>
                         </li>
                     })}
                 </ul>

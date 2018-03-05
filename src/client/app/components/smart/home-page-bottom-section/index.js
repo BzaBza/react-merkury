@@ -1,4 +1,4 @@
-import React from 'react';;
+import React from 'react';
 import Tasks from "../../dumb/tasks/index";
 import Message from "../../dumb/message/index";
 import Activity from "../../dumb/activity/index";
