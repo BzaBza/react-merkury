@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { DragDropContext } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
-import Container from '../../components/smart/container';
+import Container from '../../components/smart/dnd-container';
 
 
 
@@ -36,7 +36,7 @@ class Workflow extends Component {
         ];
 
         return (
-            <div style={style} className="containers">
+            <div style={style} className="containers workflow-container">
                 <div>
                     <h3>To Do <span className="gray">({listOne.length})</span></h3>
                     <Container id={1} list={listOne} />
