@@ -31,7 +31,7 @@ class MainHeader extends React.Component {
     render() {
         return (
             <header className="main-header-wrap">
-                <div className="main-header d-flex justify-content-between  align-content-center flex-wrap">
+                <div className="main-header d-flex align-content-center col-xl-10 col-lg-9 col-md-8 col-sm-6">
                     <div  className="d-flex">
                         <button type="button" className="drop-menu" onClick={this.handleNavClick}>
                          <GoTriangleLeft className="triangle-left"/>   <FaBars  className="icon"/>
@@ -39,7 +39,6 @@ class MainHeader extends React.Component {
                         <button type="button" className="drop-menu" onClick={this.handleSearchClick}>
                             <FaSearch className="icon"/>
                         </button>
-
                         <input type="text" className={this.state.searchToggle ? 'hide':''}/>
                     </div>
                     <div className="d-flex flex-wrap header-side-menu">
