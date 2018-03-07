@@ -37,10 +37,8 @@ class App extends Component {
         if (this.state.navToggle === true) {
             containers.marginLeft = '105px';
             mainHeaderWrap.marginLeft = '105px';
-            mainHeaderWrap.width = '95%'
         } else {
             mainHeaderWrap.marginLeft = '250px';
-            mainHeaderWrap.width = '88%';
             containers.marginLeft = '250px';
         }
     };

@@ -6,7 +6,7 @@ class Report extends React.Component {
 
     render() {
         return (
-            <div className="home-component col-md-6 col-sm-12">
+            <div className="home-component col-md-5">
                 <div className="d-flex justify-content-around align-items-center">
                     <h3 className="home-title">Report</h3>
                     <DropPeriod/>

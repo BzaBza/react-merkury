@@ -31,7 +31,9 @@ class MainHeader extends React.Component {
     render() {
         return (
             <header className="main-header-wrap">
-                <div className="main-header d-flex align-content-center col-xl-10 col-lg-9 col-md-8 col-sm-6">
+                <div
+                    className={`${this.state.navToggle ? 'col-xl-11 col-lg-10 col-md-9 col-sm-8':'col-xl-10 col-lg-9 col-md-8 col-sm-6'}
+                    ${'main-header d-flex align-content-center'}`}>
                     <div  className="d-flex">
                         <button type="button" className="drop-menu" onClick={this.handleNavClick}>
                          <GoTriangleLeft className="triangle-left"/>   <FaBars  className="icon"/>
