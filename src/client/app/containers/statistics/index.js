@@ -15,7 +15,6 @@ class Statistics extends React.Component {
                     </div>
                     <div><ActiveUsers/></div>
                 </div>
-                <div className="co-12"></div>
             </section>
         )
     }

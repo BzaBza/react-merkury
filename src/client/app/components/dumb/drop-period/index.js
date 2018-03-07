@@ -22,9 +22,9 @@ export default class DropPeriod extends React.Component {
 
     render() {
         return (
-            <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle} className="drop-period" >
+            <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle} className="drop-period bg-white" >
                 <DropdownToggle caret size="sm" color="rgba(0, 0, 0, 0)">
-                    Small Button
+                    <span>Period:</span> Last Year
                 </DropdownToggle>
                 <DropdownMenu>
                     <DropdownItem>Another Action</DropdownItem>

@@ -21,25 +21,31 @@ class Tasks extends React.Component {
             {taskName: 'New logo for JCD.pl', days: '10 days left'},
         ];
         return (
-            <section className="home-component bottom-list">
-                <div className="tasks-title d-flex justify-content-between">
+            <section className="home-component bottom-list ">
+                <div className="list-title d-flex justify-content-between align-items-center">
                     <p>Tasks</p>
-                    <p>
-                        <span
-                            className="tasks-side-image align-items-center">{this.state.taskData.taskDaysDelays}</span><span
-                        className="tasks-side-image align-items-center">{this.state.taskData.taskDaysLeft}</span>
-                    </p>
-
+                    <div className="align-items-center d-flex">
+                        <div className="days-left">
+                            <p>
+                                {this.state.taskData.taskDaysDelays}
+                            </p>
+                        </div>
+                        <div className="days-delays">
+                            <p>
+                                {this.state.taskData.taskDaysLeft}
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <ul className="tasks-list">
+                <ul className="home-footer-list ">
                     {menus.map((value, index) => {
                         return <li key={index} className="d-flex justify-content-between align-items-center">
                             <div className="d-flex flex-wrap align-items-center">
-                                <div className="tasks-side-image align-items-center"><p>{value.taskName.charAt(0)}</p>
+                                <div className="tasks-side-image align-items-center side-image"><p>{value.taskName.charAt(0)}</p>
                                 </div>
                                 <div className="text-left">
                                     <p>{value.taskName}</p>
-                                    <p className="col-md-12">{value.days}</p>
+                                    <p>{value.days}</p>
                                 </div>
                             </div>
                             <button type="button" className="tasks-button"><FaEllipsisV className="tasks-button-icon"/>

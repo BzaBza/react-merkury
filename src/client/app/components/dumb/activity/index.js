@@ -5,8 +5,8 @@ class Activity extends React.Component {
         super(props);
         this.state = {
             activityData: {
-                activityDaysDelays: '2',
-                activityDaysLeft: '5'
+                activityDaysLeft: '5',
+                activityDaysDelays: ''
             }
         };
     }
@@ -21,24 +21,26 @@ class Activity extends React.Component {
 
         return (
             <section className="home-component bottom-list">
-                <div className="tasks-title d-flex justify-content-between">
+                <div className="list-title d-flex justify-content-between align-items-center">
                     <p>Activity</p>
-                    <div>
-                        <span
-                            className="tasks-side-image align-items-center">{this.state.activityData.activityDaysDelays}</span><span
-                        className="tasks-side-image align-items-center">{this.state.activityData.activityDaysLeft}</span>
+                    <div className="d-flex">
+                        <div className="days-left align-items-center">
+                            <p>
+                                {this.state.activityData.activityDaysLeft}
+                            </p>
+                        </div>
                     </div>
                 </div>
-                <ul className="tasks-list">
+                <ul className="home-footer-list">
                     {userData.map((value, index) => {
                         return <li key={index} className="d-flex justify-content-between align-items-center">
                             <div className="d-flex flex-wrap align-items-center">
-                                <div className="tasks-side-image align-items-center">
+                                <div className="tasks-side-image align-items-center side-image">
                                     <p>{value.taskName.charAt(0)}</p>
                                 </div>
                                 <div className="text-left">
                                     <p>{value.taskName}</p>
-                                    <p className="col-md-12">{value.days}</p>
+                                    <p>{value.days}</p>
                                 </div>
                             </div>
                         </li>

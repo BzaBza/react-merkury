@@ -5,7 +5,6 @@ class Message extends React.Component {
         super(props);
         this.state = {
             messageData: {
-                messageDaysDelays: '2',
                 messageDaysLeft: '5'
             }
         };
@@ -20,19 +19,19 @@ class Message extends React.Component {
         ];
         return (
             <section className="home-component bottom-list">
-                <div className="tasks-title d-flex justify-content-between a">
+                <div className="list-title d-flex justify-content-between align-items-center">
                     <p>Message</p>
-                    <p>
-                        <span
-                            className="tasks-side-image align-items-center">{this.state.messageData.messageDaysDelays}</span><span
-                        className="tasks-side-image align-items-center">{this.state.messageData.messageDaysLeft}</span>
-                    </p>
+                    <div className="days-left align-items-center">
+                        <p>
+                            {this.state.messageData.messageDaysLeft}
+                        </p>
+                    </div>
                 </div>
-                <ul className="tasks-list">
+                <ul className="home-footer-list">
                     {menus.map((value, index) => {
                         return <li key={index} className="d-flex justify-content-between align-items-center">
                             <div className="d-flex flex-wrap align-items-center">
-                                <div className="tasks-side-image align-items-center"><p>{value.userName.charAt(0)}</p>
+                                <div className="tasks-side-image align-items-center side-image"><p>{value.userName.charAt(0)}</p>
                                 </div>
                                 <div>
                                     <div className="d-flex">

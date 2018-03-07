@@ -7,7 +7,7 @@ import Activity from "../../dumb/activity/index";
 class HomePageBottom extends React.Component {
     render() {
         return (
-            <section className="d-flex flex-wrap justify-content-between home-page-bottom">
+            <section className="d-flex flex-wrap justify-content-between home-page-bottom col-12">
                 <Tasks/>
                 <Message/>
                 <Activity/>
