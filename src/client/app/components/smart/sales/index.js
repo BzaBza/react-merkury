@@ -12,14 +12,12 @@ class Sales extends React.Component {
 
     render() {
         return (
-            <section className="home-component">
+            <section className="home-component col-md-5 col-sm-12">
                 <div className="d-flex justify-content-around align-items-center">
                     <h3 className="home-title">Your Sales</h3>
                     <DropPeriod/>
                 </div>
-               <div className="d-flex align-items-center">
                    <UserSales/>
-               </div>
             </section>
         )
     }
