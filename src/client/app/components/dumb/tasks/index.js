@@ -15,15 +15,15 @@ class Tasks extends React.Component {
 
     render() {
         let menus = [
-            {taskName: 'New website for Symu.co', days: '5 days delays'},
-            {taskName: 'Free business PSD Template ', days: '2 days delays'},
-            {taskName: 'New logo for JCD.pl', days: '5 days left'},
-            {taskName: 'New logo for JCD.pl', days: '10 days left'},
+            {taskName: 'New website for Symu.co', days: '5 days delays',className:'red' },
+            {taskName: 'Free business PSD Template ', days: '2 days delays',className:'red'},
+            {taskName: 'New logo for JCD.pl', days: '5 days left', className:'gray'},
+            {taskName: 'New logo for JCD.pl', days: '10 days left', className:'gray'},
         ];
         return (
             <section className="home-component bottom-list ">
                 <div className="list-title d-flex justify-content-between align-items-center">
-                    <p>Tasks</p>
+                    <p className="list-name">Tasks</p>
                     <div className="align-items-center d-flex">
                         <div className="days-left">
                             <p>
@@ -44,8 +44,8 @@ class Tasks extends React.Component {
                                 <div className="tasks-side-image align-items-center side-image"><p>{value.taskName.charAt(0)}</p>
                                 </div>
                                 <div className="text-left">
-                                    <p>{value.taskName}</p>
-                                    <p>{value.days}</p>
+                                    <p className="task">{value.taskName}</p>
+                                    <p className={value.className}>{value.days}</p>
                                 </div>
                             </div>
                             <button type="button" className="tasks-button"><FaEllipsisV className="tasks-button-icon"/>

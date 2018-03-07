@@ -18,14 +18,32 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            userData: {}
+            userData: {},
+            navToggle: true,
         };
         this.setUserData = this.setUserData.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
     setUserData(userData) {
         this.setState({userData: userData});
     }
+
+    handleClick(navToggle) {
+        this.setState({navToggle: navToggle});
+        let containers = document.querySelector('.containers').style;
+        let mainHeaderWrap = document.querySelector('.main-header-wrap').style;
+
+        if (this.state.navToggle === true) {
+            containers.marginLeft = '105px';
+            mainHeaderWrap.marginLeft = '105px';
+            mainHeaderWrap.width = '95%'
+        } else {
+            mainHeaderWrap.marginLeft = '250px';
+            mainHeaderWrap.width = '88%';
+            containers.marginLeft = '250px';
+        }
+    };
 
     render() {
 
@@ -34,8 +52,10 @@ class App extends Component {
                 <div className="d-flex">
                         <Route exact path='/' render={(routeProps) => <Sign routeProps={routeProps}
                                                                             setUserData={this.setUserData}/>}/>
-                    <Route strict path='/:page' component={Navigation}/>
-                    <Route strict path='/:page' component={MainHeader}/>
+                    <Route strict path='/:page'  render={(routeProps) => <Navigation routeProps={routeProps}
+                                                                                     navToggle={this.state.navToggle}/>}/>
+                    <Route strict path='/:page' render={(routeProps) => <MainHeader routeProps={routeProps}
+                                                                                    handleClick={this.handleClick}/>}/>
                     <Switch>
                         <Route path='/home' render={(routeProps) => <HomePage routeProps={routeProps}
                                                                               userData={this.state.userData}/>}/>

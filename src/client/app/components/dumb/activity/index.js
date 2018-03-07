@@ -22,7 +22,7 @@ class Activity extends React.Component {
         return (
             <section className="home-component bottom-list">
                 <div className="list-title d-flex justify-content-between align-items-center">
-                    <p>Activity</p>
+                    <p className="list-name">Activity</p>
                     <div className="d-flex">
                         <div className="days-left align-items-center">
                             <p>
@@ -33,14 +33,14 @@ class Activity extends React.Component {
                 </div>
                 <ul className="home-footer-list">
                     {userData.map((value, index) => {
-                        return <li key={index} className="d-flex justify-content-between align-items-center">
+                        return <li key={index} className="d-flex justify-content-between align-items-center activity-list">
                             <div className="d-flex flex-wrap align-items-center">
                                 <div className="tasks-side-image align-items-center side-image">
                                     <p>{value.taskName.charAt(0)}</p>
                                 </div>
                                 <div className="text-left">
                                     <p>{value.taskName}</p>
-                                    <p>{value.days}</p>
+                                    <p className="gray">{value.days}</p>
                                 </div>
                             </div>
                         </li>

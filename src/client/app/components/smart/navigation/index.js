@@ -4,33 +4,6 @@ import Logo from "../../dumb/logo/index";
 
 
 class Navigation extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            navToggle: false,
-        };
-
-        this.handleNavClick = this.handleNavClick.bind(this);
-        // this.addActive = this.addActive.bind(this);
-    }
-
-    handleNavClick(navToggle) {
-        this.setState({navToggle: !this.state.navToggle});
-    };
-
-    // addActive(event) {
-    //     const menus = this.state.menus;
-    //     console.log(($('a').val($(this))));
-    //     for (let i = 0; i < menus.length; i++) {
-    //         if (menus[i].linkName.toLowerCase() === $('a').val($(this)).className) {
-    //
-    //
-    //
-    //             console.log($('a').val($(this)).className);
-    //         }else {console.log('not work');}
-    //
-    //     }
-    // }
 
     render() {
 
@@ -44,14 +17,14 @@ class Navigation extends React.Component {
         ];
 
         return (
-            <aside className='sidebar'>
+            <aside className={this.props.navToggle ? 'sidebar': 'close-nav'}>
                 <Logo/>
                 <nav>
                     <ul className="nav-list">
                         {menus.map((value, index) => {
                             return <li key={index}>
                                 <Link to={value.path.toLowerCase()}
-                                      className={value.linkName.toLowerCase()} >{value.linkName}</Link></li>
+                                      className={value.linkName.toLowerCase()} >{this.props.navToggle ? value.linkName : ''}</Link></li>
                         })}
                     </ul>
                 </nav>

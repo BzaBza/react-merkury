@@ -12,7 +12,7 @@ class MainHeader extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            navToggle: true,
+            navToggle: false,
             searchToggle: true
         };
         this.handleNavClick = this.handleNavClick.bind(this);
@@ -40,7 +40,7 @@ class MainHeader extends React.Component {
                             <FaSearch className="icon"/>
                         </button>
 
-                        <input type="text" className={this.state.searchToggle ? 'hiden':''}/>
+                        <input type="text" className={this.state.searchToggle ? 'hide':''}/>
                     </div>
                     <div className="d-flex flex-wrap header-side-menu">
                         <button type="submit" className="button btn btn-primary">+ Add project</button>

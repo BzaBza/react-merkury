@@ -3,6 +3,7 @@
   height: 100vh
   padding: 0
   position: fixed
+  transition: width 1s
 
 
 .nav-list
@@ -26,8 +27,18 @@
 a:before
   box-sizing: content-box
 
-.hiden
-  display: none
+.close-nav
+  background-color: #0e1a35
+  height: 100vh
+  padding: 0
+  position: fixed
+  .logo
+    background-image: url("../app/icons/logo-icon.png")
+    background-position: center
+    background-size: cover
+    height: 33px
+    width: 33px
+    margin: 0
 
 .active
   background-color: #122143

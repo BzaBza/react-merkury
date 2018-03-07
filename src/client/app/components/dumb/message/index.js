@@ -20,7 +20,7 @@ class Message extends React.Component {
         return (
             <section className="home-component bottom-list">
                 <div className="list-title d-flex justify-content-between align-items-center">
-                    <p>Message</p>
+                    <p className="list-name">Message</p>
                     <div className="days-left align-items-center">
                         <p>
                             {this.state.messageData.messageDaysLeft}
@@ -36,7 +36,7 @@ class Message extends React.Component {
                                 <div>
                                     <div className="d-flex">
                                         <p>{value.userName}</p>
-                                        <p>{value.time}</p>
+                                        <p className="gray">{value.time}</p>
                                     </div>
                                     <p>{value.message}</p>
                                 </div>
