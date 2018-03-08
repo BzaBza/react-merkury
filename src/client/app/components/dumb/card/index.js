@@ -11,16 +11,20 @@ class Card extends Component {
         const opacity = isDragging ? 0 : 1;
 
         return connectDragSource(connectDropTarget(
-            <div  className="d-flex justify-content-between align-items-center"
-                style={{
-                border: '1px solid gray',
-                cursor: 'move',
-                opacity
-            }}>
-                <div className="tasks-side-image align-items-center"><p>{card.text.charAt(0)}</p></div>
-                <div className="d-flex flex-wrap align-items-center">
-                    <p>{card.text}</p>
-                    <p className="col-md-12">{card.days}</p>
+            <div className="d-flex justify-content-between align-items-center"
+                 style={{
+                     border: '1px solid rgba(132, 146, 175, 0.3)',
+                     cursor: 'move',
+                     opacity,
+                     padding: '0 0.5em 0 0.5em',
+                     margin: '1em 0 0 0',
+                     width: '460px',
+                     height: '118px'
+                 }}>
+                <div className="tasks-side-image"><p>{card.text.charAt(0)}</p></div>
+                <div className="d-flex flex-wrap align-items-center col-9">
+                    <p className="col-12">{card.text}</p>
+                    <p className="col-12">{card.days}</p>
                 </div>
                 <button type="button" className="tasks-button"><FaEllipsisV className="tasks-button-icon"/>
                 </button>
