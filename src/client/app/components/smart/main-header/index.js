@@ -43,7 +43,7 @@ class MainHeader extends React.Component {
                         </button>
                         <input type="text" className={this.state.searchToggle ? 'hide':''}/>
                     </div>
-                    <div className="d-flex flex-wrap header-side-menu">
+                    <div className="d-flex flex-wrap header-side-menu align-items-center">
                         <button type="submit" className="button btn btn-primary">+ Add project</button>
                         <button className="drop-menu"><GoMail className="icon"/></button>
                         <button className="drop-menu"><TiBell className="icon"/></button>

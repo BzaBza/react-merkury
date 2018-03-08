@@ -1,5 +1,9 @@
 import React, {component} from 'react';
 import FaEllipsisV from 'react-icons/lib/fa/ellipsis-v';
+import userPhoto1 from '../../../icons/users/johhn-doe.png';
+import userPhoto2 from '../../../icons/users/alex-smith.png';
+import userPhoto3 from '../../../icons/users/nina-jones.png';
+import userPhoto4 from '../../../icons/users/ann-cloony.png';
 
 class User extends React.Component {
     constructor(props) {
@@ -12,32 +16,36 @@ class User extends React.Component {
     render() {
         let menus = [
             {
-                taskName: 'Jon Doe',
+                userName: 'Jon Doe',
                 position: 'CEO',
                 lastActivity: 'Online now!',
                 email: 'asdasd@asd.com',
-                phone: '88063966667'
+                phone: '88063966667',
+                userPhoto: userPhoto1
             },
             {
-                taskName: 'Anton Antonich',
+                userName: 'Alex Smith',
                 position: 'UX Designer',
                 lastActivity: 'Online now!',
                 email: 'asdasd@asd.com',
-                phone: '88063966667'
+                phone: '88063966667',
+                userPhoto: userPhoto2
             },
             {
-                taskName: 'Ani Jines',
+                userName: 'Nina Jones',
                 position: 'Web Designer',
                 lastActivity: '20 minutes ago',
                 email: 'asdasd@asd.com',
-                phone: '88063966667'
+                phone: '88063966667',
+                userPhoto: userPhoto3
             },
             {
-                taskName: 'Pepe Rakolle',
+                userName: 'Ann Cloony',
                 position: 'Account Manager',
                 lastActivity: '99999 days ago',
                 email: 'asdasd@asd.com',
-                phone: '88063966667'
+                phone: '88063966667',
+                userPhoto: userPhoto4
             },
         ];
         return (
@@ -47,37 +55,40 @@ class User extends React.Component {
                 </div>
                 <ul className="tasks-list">
                     <li className="justify-content-between d-flex">
-                        <div className="col-2">Name</div>
-                        <div className="col-2">Last activity</div>
-                        <div className="col-2">Mail</div>
-                        <div className="col-2">Phone</div>
+                        <div className="col-md-3">Name</div>
+                        <div className="col-md-3">Last activity</div>
+                        <div className="col-md-3">Mail</div>
+                        <div className="col-md-3">Phone</div>
                     </li>
                     {menus.map((value, index) => {
-                        return <li key={index} className="d-flex justify-content-between align-items-center">
-                            <div className="d-flex col-3 users-table">
-                                <div className="tasks-side-image align-items-center"><p>{value.taskName.charAt(0)}</p>
+                        return <li key={index} className="d-flex justify-content-between align-items-center  flex-wrap">
+                            <div className="d-flex col-md-3 users-table">
+                                <div className="align-items-center">
+                                    <img src={value.userPhoto}/>
+                                    <div className={value.lastActivity === 'Online now!' ?'online' : ''}/>
                                 </div>
                                 <div>
-                                    <p>{value.taskName}</p>
+                                    <p>{value.userName}</p>
                                     <p>{value.position}</p>
                                 </div>
                             </div>
-                            <div className="col-3 users-table">
-                                <div>
+                            <div className="col-md-3 users-table">
+                                <div className={value.lastActivity === 'Online now!' ? 'green': 'gray'
+                                    }>
                                     {value.lastActivity}
                                 </div>
                             </div>
-                            <div className="col-3 users-table">
+                            <div className="col-md-3 users-table">
                                 <div>
                                     {value.email}
                                 </div>
                             </div>
-                            <div className="col-2 users-table">
+                            <div className="col-md-2 users-table">
                                 <div>
                                     {value.phone}
                                 </div>
                             </div>
-                            <div className="users-table col-1">
+                            <div className="users-table col-md-1">
                                 <button type="button" className="tasks-button"><FaEllipsisV className="tasks-button-icon"/>
                                 </button>
                             </div>
