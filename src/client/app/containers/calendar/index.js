@@ -2,7 +2,7 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 import React, {Component} from "react";
 import BigCalendar from "react-big-calendar";
 import moment from "moment";
-import events from "../../components/smart/custome-event/events.js";
+import events from "../../data/events.js";
 import CustomEvent from "../../components/smart/custome-event";
 
 export default class Calendar extends Component {

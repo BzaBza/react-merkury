@@ -1,6 +1,7 @@
 import React, {component} from 'react';
 import FaEllipsisV from 'react-icons/lib/fa/ellipsis-v';
 import MdAccessTime from 'react-icons/lib/md/access-time';
+import userData from '../../../data/users-data'
 
 class User extends React.Component {
     constructor(props) {
@@ -12,40 +13,7 @@ class User extends React.Component {
     getUserData(){
         this.setState((state, props)=>(
             {
-                userData: [
-                    {
-                        userName: 'John Doe',
-                        position: 'CEO',
-                        lastActivity: 'Online now!',
-                        email: 'asdasd@asd.com',
-                        phone: '88063966667',
-                        userPhoto: './users/john-doe.png'
-                    },
-                    {
-                        userName: 'Alex Smith',
-                        position: 'UX Designer',
-                        lastActivity: 'Online now!',
-                        email: 'asdasd@asd.com',
-                        phone: '88063966667',
-                        userPhoto: './users/alex-smith.png'
-                    },
-                    {
-                        userName: 'Nina Jones',
-                        position: 'Web Designer',
-                        lastActivity: '20 minutes ago',
-                        email: 'asdasd@asd.com',
-                        phone: '88063966667',
-                        userPhoto: './users/nina-jones.png'
-                    },
-                    {
-                        userName: 'Ann Cloony',
-                        position: 'Account Manager',
-                        lastActivity: '99999 days ago',
-                        email: 'asdasd@asd.com',
-                        phone: '88063966667',
-                        userPhoto: './users/ann-cloony.png'
-                    },
-                ]
+                userData: userData
             }
         ));
     }
@@ -58,7 +26,7 @@ class User extends React.Component {
     render() {
         return (
             <section>
-                <div className="tasks-title">
+                <div className="users-title">
                     <p>Users <span className="gray">({this.state.userData.length})</span></p>
                 </div>
                 <ul className="tasks-list">
@@ -76,7 +44,7 @@ class User extends React.Component {
                                     <div className={value.lastActivity === 'Online now!' ?'online' : ''}/>
                                 </div>
                                 <div className="d-flex justify-content-center flex-wrap">
-                                    <div className="col-12">{value.userName}</div>
+                                    <div className="col-12 user-name">{value.userName}</div>
                                     <div className="gray col-12">{value.position}</div>
                                 </div>
                             </div>
