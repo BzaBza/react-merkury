@@ -10,24 +10,26 @@ class Statistics extends React.Component {
     render() {
         return (
             <section className="containers">
-                <header className="d-flex justify-content-between tasks-title">
+                <header className="d-flex justify-content-between statistics-header flex-wrap">
                     <h2>Lorem Ipsum Stats</h2>
                     <div className="d-flex justify-content-between col-3">
                         <DropPeriod/>
                         <DropPeriod/>
                     </div>
                 </header>
-                <div className="d-flex justify-content-around align-items-center flex-wrap">
-                    <div className="col-3">
+                <div className="d-flex justify-content-around flex-wrap statistics-line-charts">
+                    <div className="col-md-5">
                         <StatsContainer/>
                     </div>
-                    <div className="col-6 border">
+                    <div className="col-md-6 border">
                         <h4 className="home-title">Active users</h4>
                         <ActiveUsers/>
                     </div>
                 </div>
-                <div className="border">
-                    <h3 className="gray">Total sales</h3>
+                <div className="border statistics-pie-chart-section">
+                   <div className="statistics-header">
+                       <h3 className="gray">Total sales</h3>
+                   </div>
                     <StatSales/>
                 </div>
             </section>

@@ -7,46 +7,63 @@ import userPhoto3 from '../../../icons/users/nina-jones.png';
 import userPhoto4 from '../../../icons/users/ann-cloony.png';
 
 class User extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            userData:[],
+        };
+    }
+    getUserData(){
+        this.setState((state, props)=>(
+            {
+                userData: [
+                    {
+                        userName: 'Jon Doe',
+                        position: 'CEO',
+                        lastActivity: 'Online now!',
+                        email: 'asdasd@asd.com',
+                        phone: '88063966667',
+                        userPhoto: userPhoto1
+                    },
+                    {
+                        userName: 'Alex Smith',
+                        position: 'UX Designer',
+                        lastActivity: 'Online now!',
+                        email: 'asdasd@asd.com',
+                        phone: '88063966667',
+                        userPhoto: userPhoto2
+                    },
+                    {
+                        userName: 'Nina Jones',
+                        position: 'Web Designer',
+                        lastActivity: '20 minutes ago',
+                        email: 'asdasd@asd.com',
+                        phone: '88063966667',
+                        userPhoto: userPhoto3
+                    },
+                    {
+                        userName: 'Ann Cloony',
+                        position: 'Account Manager',
+                        lastActivity: '99999 days ago',
+                        email: 'asdasd@asd.com',
+                        phone: '88063966667',
+                        userPhoto: userPhoto4
+                    },
+                ]
+            }
+        ));
+    }
+
+
+    componentWillMount(){
+        this.getUserData();
+    }
 
     render() {
-        let menus = [
-            {
-                userName: 'Jon Doe',
-                position: 'CEO',
-                lastActivity: 'Online now!',
-                email: 'asdasd@asd.com',
-                phone: '88063966667',
-                userPhoto: userPhoto1
-            },
-            {
-                userName: 'Alex Smith',
-                position: 'UX Designer',
-                lastActivity: 'Online now!',
-                email: 'asdasd@asd.com',
-                phone: '88063966667',
-                userPhoto: userPhoto2
-            },
-            {
-                userName: 'Nina Jones',
-                position: 'Web Designer',
-                lastActivity: '20 minutes ago',
-                email: 'asdasd@asd.com',
-                phone: '88063966667',
-                userPhoto: userPhoto3
-            },
-            {
-                userName: 'Ann Cloony',
-                position: 'Account Manager',
-                lastActivity: '99999 days ago',
-                email: 'asdasd@asd.com',
-                phone: '88063966667',
-                userPhoto: userPhoto4
-            },
-        ];
         return (
             <section>
                 <div className="tasks-title">
-                    <p>Users <span className="gray">({menus.length})</span></p>
+                    <p>Users <span className="gray">({this.state.userData.length})</span></p>
                 </div>
                 <ul className="tasks-list">
                     <li className="justify-content-between d-flex gray">
@@ -55,7 +72,7 @@ class User extends React.Component {
                         <div className="col-md-3">Mail</div>
                         <div className="col-md-3">Phone</div>
                     </li>
-                    {menus.map((value, index) => {
+                    {this.state.userData.map((value, index) => {
                         return <li key={index} className="d-flex justify-content-between align-items-center  flex-wrap col-12">
                             <div className="d-flex col-md-3 users-table">
                                 <div className="align-items-center">

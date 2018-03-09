@@ -65,19 +65,23 @@ class StatsContainer extends React.Component {
 
         return (
             <section>
-               <div className="d-flex align-items-center border">
+               <div className="d-flex align-items-center border col-11 statistics-line-chart">
                    <div className="text-center gray">
                        <h3>1,560</h3>
                        <p>Sales</p>
                    </div>
-                   <Stats chartData = {chartData1}/>
+                   <div className="col-10">
+                       <Stats chartData = {chartData1}/>
+                   </div>
                </div>
-                <div className="d-flex align-items-center border">
+                <div className="d-flex align-items-center border col-11 statistics-line-chart">
                     <div className="text-center gray">
                         <h3>3,230</h3>
                         <p>Views</p>
                     </div>
-                    <Stats chartData = {chartData2}/>
+                    <div className="col-10">
+                        <Stats chartData = {chartData2}/>
+                    </div>
                 </div>
             </section>
         )

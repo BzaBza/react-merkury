@@ -11,7 +11,6 @@ class UserSales extends Component {
     getChartData(){
         this.setState({
             chartData:{
-                borderWidth: 0,
                 labels: [
                     'Websites',
                     'Logo',
@@ -19,6 +18,7 @@ class UserSales extends Component {
                     'Adwords'
                 ],
                 datasets: [{
+                    borderWidth: 0,
                     data: [300, 50, 100, 20],
                     backgroundColor: [
                         '#5584ff',

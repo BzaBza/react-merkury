@@ -22,7 +22,7 @@ class PieChartSales extends Component {
             <div className="chart">
                 <Doughnut
                     data={this.state.chartData}
-                    height={100}
+                    height={222}
                     width={210}
                     options={{
                         legend: false

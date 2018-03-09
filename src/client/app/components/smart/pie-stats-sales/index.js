@@ -58,10 +58,28 @@ class StatSales extends React.Component {
 
 
         return (
-            <section className="d-flex flex-wrap justify-content-center">
-                <PieChartSales chartData={chartData1}/>
-                <PieChartSales chartData={chartData2}/>
-                <PieChartSales chartData={chartData3}/>
+            <section className="d-flex flex-wrap justify-content-around">
+                <div className="d-flex align-items-center">
+                    <PieChartSales chartData={chartData1}/>
+                    <div className="gray statistics-pie-cart-info">
+                        <h4>2,300$</h4>
+                        <p>Direct Sales</p>
+                    </div>
+                </div>
+                <div className="d-flex  align-items-center">
+                    <PieChartSales chartData={chartData2}/>
+                    <div className="gray statistics-pie-cart-info">
+                        <h4>980$</h4>
+                        <p>Channel Sales</p>
+                    </div>
+                </div>
+                <div className="d-flex align-items-center">
+                    <PieChartSales chartData={chartData3}/>
+                    <div className="gray statistics-pie-cart-info">
+                        <h4>1,250$</h4>
+                        <p>Channel Sales</p>
+                    </div>
+                </div>
             </section>
         )
     }
