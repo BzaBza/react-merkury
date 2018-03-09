@@ -31,16 +31,6 @@ class App extends Component {
 
     handleClick(navToggle) {
         this.setState({navToggle: navToggle});
-        let containers = document.querySelector('.containers').style;
-        let mainHeaderWrap = document.querySelector('.main-header-wrap').style;
-
-        if (this.state.navToggle === true) {
-            containers.marginLeft = '105px';
-            mainHeaderWrap.marginLeft = '105px';
-        } else {
-            mainHeaderWrap.marginLeft = '250px';
-            containers.marginLeft = '250px';
-        }
     };
 
     render() {

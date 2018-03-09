@@ -6,20 +6,33 @@ class Tasks extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            taskData: {
+            taskData:[],
+            taskCondition: {
                 taskDaysDelays: '2',
                 taskDaysLeft: '5'
             }
         };
     }
 
+    getUserData() {
+        this.setState((state, props) => (
+            {
+                taskData: [
+                    {taskName: 'New website for Symu.co', days: '5 days delays', className: 'red'},
+                    {taskName: 'Free business PSD Template ', days: '2 days delays', className: 'red'},
+                    {taskName: 'New logo for JCD.pl', days: '5 days left', className: 'gray'},
+                    {taskName: 'New logo for JCD.pl', days: '10 days left', className: 'gray'},
+                ]
+            }
+        ));
+    }
+
+    componentWillMount() {
+        this.getUserData();
+    }
+
     render() {
-        let menus = [
-            {taskName: 'New website for Symu.co', days: '5 days delays',className:'red' },
-            {taskName: 'Free business PSD Template ', days: '2 days delays',className:'red'},
-            {taskName: 'New logo for JCD.pl', days: '5 days left', className:'gray'},
-            {taskName: 'New logo for JCD.pl', days: '10 days left', className:'gray'},
-        ];
+
         return (
             <section className="home-component bottom-list ">
                 <div className="list-title d-flex justify-content-between align-items-center">
@@ -27,21 +40,22 @@ class Tasks extends React.Component {
                     <div className="align-items-center d-flex">
                         <div className="days-left">
                             <p>
-                                {this.state.taskData.taskDaysDelays}
+                                {this.state.taskCondition.taskDaysDelays}
                             </p>
                         </div>
                         <div className="days-delays">
                             <p>
-                                {this.state.taskData.taskDaysLeft}
+                                {this.state.taskCondition.taskDaysLeft}
                             </p>
                         </div>
                     </div>
                 </div>
                 <ul className="home-footer-list ">
-                    {menus.map((value, index) => {
+                    {this.state.taskData.map((value, index) => {
                         return <li key={index} className="d-flex justify-content-between align-items-center">
                             <div className="d-flex flex-wrap align-items-center">
-                                <div className="tasks-side-image align-items-center side-image"><p>{value.taskName.charAt(0)}</p>
+                                <div className="tasks-side-image align-items-center side-image">
+                                    <p>{value.taskName.charAt(0)}</p>
                                 </div>
                                 <div className="text-left">
                                     <p className="task">{value.taskName}</p>

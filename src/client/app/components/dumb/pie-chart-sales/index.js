@@ -1,41 +1,36 @@
 import React, {Component} from 'react';
-import {Line} from 'react-chartjs-2';
+import {Doughnut} from 'react-chartjs-2';
 
-
-class Stats extends Component {
-
+class PieChartSales extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            chartData: {},
+            chartData:{}
         }
     }
-
-    getChartData() {
+    getChartData(){
         this.setState({
             chartData: this.props.chartData
-        });
+        })
     }
-    componentWillMount() {
+    componentWillMount(){
         this.getChartData();
     }
 
-
-
     render() {
         return (
-            <div>
-                <Line
+            <div className="chart">
+                <Doughnut
                     data={this.state.chartData}
+                    height={100}
+                    width={210}
                     options={{
-                        legend: false,
-                    }
-                    }
-
+                        legend: false
+                    }}
                 />
             </div>
-        )
-            ;
+        );
     }
 }
-export default Stats;
+
+export default PieChartSales;

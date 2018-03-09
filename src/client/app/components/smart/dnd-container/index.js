@@ -47,7 +47,7 @@ class Container extends Component {
         const { canDrop, isOver, connectDropTarget } = this.props;
         const isActive = canDrop && isOver;
 
-        const backgroundColor = isActive ? 'rgba(176, 176, 176, 1);' : '#FFF';
+        const backgroundColor = isActive ? 'rgba(176, 176, 176, 1)' : '#FFF';
 
         return connectDropTarget(
             <div style={{

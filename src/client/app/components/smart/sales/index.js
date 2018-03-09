@@ -3,13 +3,6 @@ import UserSales from "../../dumb/pie-chart-with-padding-angle/index";
 import DropPeriod from "../../dumb/drop-period/index";
 
 class Sales extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            sales: '1,560'
-        };
-    }
-
     render() {
         return (
             <section className="home-component col-md-4 col-sm-12">

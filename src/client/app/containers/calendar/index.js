@@ -23,7 +23,7 @@ const CustomEvent = ({event}) => {
     return <div>
         <span className='rbc-event-content'>{event.title}</span>
         <div className={`rbc-event-expand
-         ${event.isDataOpen ? 'open' : 'hidden'} ${event.end.getDay() > 3 ?
+         ${event.isDataOpen ? 'open' : ''} ${event.end.getDay() > 3 ?
             'left' : 'right'}`}>
             <div className='rbc-event-part'>
                 <div className='part-wrapper'>

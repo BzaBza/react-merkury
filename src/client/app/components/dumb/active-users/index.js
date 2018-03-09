@@ -12,7 +12,7 @@ class ActiveUsers extends Component {
     getChartData(){
         this.setState({
             chartData:{
-                labels: false,
+                labels: ['', '', '', '', '', '', ''],
                 datasets: [
                     {
                         fill: false,
@@ -30,7 +30,7 @@ class ActiveUsers extends Component {
                         pointHoverBorderColor: 'rgba(220,220,220,1)',
                         pointHoverBorderWidth: 2,
                         pointRadius: 1,
-                        pointHitRadius: 10,
+                        pointHitRadius: 1,
                         data: [65, 59, 80, 81, 56, 55, 40]
                     }
                 ]

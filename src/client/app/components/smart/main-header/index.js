@@ -21,7 +21,18 @@ class MainHeader extends React.Component {
 
     handleNavClick() {
         this.setState({navToggle: !this.state.navToggle});
-        this.props.handleClick(this.state.navToggle)
+        this.props.handleClick(this.state.navToggle);
+
+        let containers = document.querySelector('.containers').style;
+        let mainHeaderWrap = document.querySelector('.main-header-wrap').style;
+
+        if (this.state.navToggle === false) {
+            containers.marginLeft = '105px';
+            mainHeaderWrap.marginLeft = '105px';
+        } else {
+            mainHeaderWrap.marginLeft = '250px';
+            containers.marginLeft = '250px';
+        }
     };
 
     handleSearchClick() {

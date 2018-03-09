@@ -11,6 +11,7 @@ class UserSales extends Component {
     getChartData(){
         this.setState({
             chartData:{
+                borderWidth: 0,
                 labels: [
                     'Websites',
                     'Logo',

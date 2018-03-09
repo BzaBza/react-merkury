@@ -4,19 +4,33 @@ class Message extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            userData:[],
             messageData: {
-                messageDaysLeft: '5'
+                messageDaysLeft: 2
             }
         };
     }
+    getUserData(){
+        this.setState((state, props)=>(
+            {
+                userData: [
+                    {userName: 'Nina Jones', time: 5, condition:'days delays', message: 'Hey You! It’s me again :-) I attached new (...)'},
+                    {userName: 'Nina Jones', time: 2, condition:'days delays', message: 'Hey! I attached some new PSD files for (...)'},
+                    {userName: 'James Smith', time: 5, condition:'days left', message: 'Good morning, you are fired!'},
+                    {userName: 'Nina Jones', time: 10, condition:'days left', message: 'Hello! Could You bring me coffee please?'},
+                ]
+            }
+        ));
+    }
+
+
+    componentWillMount(){
+        this.getUserData();
+    }
+
 
     render() {
-        let menus = [
-            {userName: 'Nina Jones', time: '5 days delays', message: 'Hey You! It’s me again :-) I attached new (...)'},
-            {userName: 'Nina Jones ', time: '2 days delays', message: 'Hey! I attached some new PSD files for (...)'},
-            {userName: 'James Smith', time: '5 days left', message: 'Good morning, you are fired!'},
-            {userName: 'Nina Jones', time: '10 days left', message: 'Hello! Could You bring me coffee please?'},
-        ];
+
         return (
             <section className="home-component bottom-list">
                 <div className="list-title d-flex justify-content-between align-items-center">
@@ -28,7 +42,7 @@ class Message extends React.Component {
                     </div>
                 </div>
                 <ul className="home-footer-list">
-                    {menus.map((value, index) => {
+                    {this.state.userData.map((value, index) => {
                         return <li key={index} className="d-flex justify-content-between align-items-center">
                             <div className="d-flex flex-wrap align-items-center">
                                 <div className="tasks-side-image align-items-center side-image"><p>{value.userName.charAt(0)}</p>
@@ -36,7 +50,7 @@ class Message extends React.Component {
                                 <div>
                                     <div className="d-flex">
                                         <p>{value.userName}</p>
-                                        <p className="gray">{value.time}</p>
+                                        <p className="gray">{value.time + value.condition}</p>
                                     </div>
                                     <p>{value.message}</p>
                                 </div>

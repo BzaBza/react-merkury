@@ -4,21 +4,32 @@ class Activity extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            userData:[],
             activityData: {
                 activityDaysLeft: '5',
                 activityDaysDelays: ''
             }
         };
     }
+    getUserData(){
+        this.setState((state, props)=>(
+            {
+                userData: [
+                    {taskName: 'New website for Symu.co', days: '5 days delays'},
+                    {taskName: 'Free business PSD Template ', days: '2 days delays'},
+                    {taskName: 'New logo for JCD.pl', days: '5 days left'},
+                    {taskName: 'New logo for JCD.pl', days: '10 days left'},
+                ]
+            }
+        ));
+    }
+
+
+    componentWillMount(){
+        this.getUserData();
+    }
 
     render() {
-        const userData = [
-            {taskName: 'New website for Symu.co', days: '5 days delays'},
-            {taskName: 'Free business PSD Template ', days: '2 days delays'},
-            {taskName: 'New logo for JCD.pl', days: '5 days left'},
-            {taskName: 'New logo for JCD.pl', days: '10 days left'},
-        ];
-
         return (
             <section className="home-component bottom-list">
                 <div className="list-title d-flex justify-content-between align-items-center">
@@ -32,7 +43,7 @@ class Activity extends React.Component {
                     </div>
                 </div>
                 <ul className="home-footer-list">
-                    {userData.map((value, index) => {
+                    {this.state.userData.map((value, index) => {
                         return <li key={index} className="d-flex justify-content-between align-items-center activity-list">
                             <div className="d-flex flex-wrap align-items-center">
                                 <div className="tasks-side-image align-items-center side-image">

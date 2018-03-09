@@ -16,6 +16,7 @@ class Navigation extends React.Component {
             {linkName: 'Settings', path: '/Settings'}
         ];
 
+
         return (
             <aside className={this.props.navToggle ? 'sidebar': 'close-nav'}>
                 <Logo/>
