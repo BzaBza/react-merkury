@@ -20,7 +20,7 @@
     "history": "^4.7.2",
     "immutability-helper": "^2.6.5",
     "jquery": "^3.3.1",
-    "moment": "^2.21.0",
+    "moment": "^2.20.1",
     "popper.js": "^1.12.9",
     "postcss-loader": "^2.0.10",
     "react": "^16.2.0",

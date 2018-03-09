@@ -1,0 +1,114 @@
+// colours
+
+$color-white: #fff
+$inner-header: #0e1a35
+$color-inner: #f6f7fa
+$inner-secondary: #5584ff
+
+// font-weights
+
+$font-normal: 500
+$font-bold: 700
+
+$font-text: "Roboto", sans-serif
+
+.calendar
+  .container
+    text-align: center
+
+.rbc-calendar
+  height: 100%
+
+
+.rbc-month-view
+  display: block!important
+  position: relative
+  border: 1px solid #ddd
+  width: 100%
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+  -webkit-user-select: none
+  height: 100%
+  background-color: $color-white
+
+
+.rbc-month-row
+  height: 100px
+
+.rbc-time-view
+  background-color: $color-white
+
+.rbc-agenda-view
+  background-color: $color-white
+
+.rbc-header
+  font-family: $font-text
+  color: $inner-header
+  text-transform: uppercase
+  font-weight: $font-bold
+  font-size: 14px
+  text-align: left
+  padding: 10px
+
+.rbc-event
+  border-radius: 0
+  border-left: 3px solid $inner-secondary
+  background-color: $color-inner
+  padding: 5px 0 5px 5px
+
+  &-content
+    font-family: $font-text
+    font-weight: $font-normal
+    font-size: 12px
+    color: $inner-header
+    letter-spacing: 0.14px
+
+
+  &.rbc-selected
+    background-color: $color-inner
+
+
+
+.rbc-row-segment
+  padding: 0 1px 1px 2px
+
+
+.rbc-date-cell
+  text-align: left
+  padding: 5px 0 5px 10px
+
+
+.rbc-toolbar-label
+  color: $inner-header
+  font-size: 23px
+  font-weight: $font-bold
+  font-family: $font-text
+
+.rbc-event-content
+  text-align: left
+
+
+.booking-calendar
+  .header
+    width: 100%
+    background-color: $inner-secondary !important
+    border: none !important
+    z-index: 0
+
+
+  .week
+    border-right: 1px solid $inner-secondary !important
+    border-top: 1px solid $inner-secondary !important
+
+    .day-box .day
+      background-color: $color-white !important
+      color: $inner-secondary !important
+      border-right: 1px solid $inner-secondary !important
+
+
+    .day-box:last-child .day
+      border-right: none !important
+
+
+

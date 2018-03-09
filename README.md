@@ -7,5 +7,5 @@ INSTALLATION
     
 Run commands:
 
-* mpm install
+* npm install
 * npm start
