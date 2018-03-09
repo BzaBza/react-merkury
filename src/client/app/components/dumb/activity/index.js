@@ -1,4 +1,5 @@
 import React, {component} from 'react';
+import MdAccessTime from 'react-icons/lib/md/access-time';
 
 class Activity extends React.Component {
     constructor(props) {
@@ -15,10 +16,10 @@ class Activity extends React.Component {
         this.setState((state, props)=>(
             {
                 userData: [
-                    {taskName: 'New website for Symu.co', days: '5 days delays'},
-                    {taskName: 'Free business PSD Template ', days: '2 days delays'},
-                    {taskName: 'New logo for JCD.pl', days: '5 days left'},
-                    {taskName: 'New logo for JCD.pl', days: '10 days left'},
+                    {userName: 'Nina Jones', days: '5 days delays', action:'added a new project', taskName:'Free UI Kit'},
+                    {userName: 'James Smith', days: '2 days delays', action:'commented project', taskName:'Free PSD Template'},
+                    {userName: 'Alex Clooney', days: '5 days left', action:'completed task', taskName:'Website'},
+                    {userName: 'Alexandra Spears', days: '10 days left', action:'added a new project', taskName:'Free PSD Template'},
                 ]
             }
         ));
@@ -47,11 +48,17 @@ class Activity extends React.Component {
                         return <li key={index} className="d-flex justify-content-between align-items-center activity-list">
                             <div className="d-flex flex-wrap align-items-center">
                                 <div className="tasks-side-image align-items-center side-image">
-                                    <p>{value.taskName.charAt(0)}</p>
+                                    <p>{value.userName.charAt(0)}</p>
                                 </div>
-                                <div className="text-left">
-                                    <p>{value.taskName}</p>
-                                    <p className="gray">{value.days}</p>
+                                <div>
+                                    <div className="text-left  d-flex">
+                                        <p>{value.userName}</p>
+                                        <p>{value.action}</p>
+                                        <p>{value.taskName}</p>
+                                    </div>
+                                    <div className="col-12 text-left">
+                                        <p className=' d-flex align-items-center gray'><MdAccessTime/> {value.days}</p>
+                                    </div>
                                 </div>
                             </div>
                         </li>

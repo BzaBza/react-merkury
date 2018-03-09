@@ -12,11 +12,9 @@ class Sign extends Component {
 
         this.state = {
             currentTab: 'login',
-            userData:{}
         };
 
         this.toggleTab = this.toggleTab.bind(this);
-        this.setRootUserData = this.setRootUserData.bind(this);
     }
 
     toggleTab(tab) {
@@ -28,10 +26,6 @@ class Sign extends Component {
 
     }
 
-    setRootUserData(userData){
-        this.setState({userData: userData});
-        this.props.setUserData(userData)
-    }
 
     render() {
         return (
@@ -67,7 +61,7 @@ class Sign extends Component {
                             <Register />
                         </TabPane>
                         <TabPane tabId="login">
-                            <Login routeProps={this.props.routeProps} setRootUserData={this.setRootUserData}/>
+                            <Login routeProps={this.props.routeProps} setRootUserData={this.props.setUserData}/>
                         </TabPane>
                     </TabContent>
                 </div>

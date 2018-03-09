@@ -1,5 +1,6 @@
 import React, {component} from 'react';
 import FaEllipsisV from 'react-icons/lib/fa/ellipsis-v';
+import MdAccessTime from 'react-icons/lib/md/access-time';
 
 
 class Tasks extends React.Component {
@@ -8,8 +9,8 @@ class Tasks extends React.Component {
         this.state = {
             taskData:[],
             taskCondition: {
-                taskDaysDelays: '2',
-                taskDaysLeft: '5'
+                taskDaysDelays: '5',
+                taskDaysLeft: '2'
             }
         };
     }
@@ -59,7 +60,7 @@ class Tasks extends React.Component {
                                 </div>
                                 <div className="text-left">
                                     <p className="task">{value.taskName}</p>
-                                    <p className={value.className}>{value.days}</p>
+                                    <p className={`${value.className}${' d-flex align-items-center'}`}><MdAccessTime/>{value.days}</p>
                                 </div>
                             </div>
                             <button type="button" className="tasks-button"><FaEllipsisV className="tasks-button-icon"/>

@@ -10,8 +10,8 @@ export default class Calendar extends Component {
         let allViews = Object.keys(BigCalendar.Views).map(k => BigCalendar.Views[2]);
         BigCalendar.momentLocalizer(moment);
         return (
-            <div className="calendar  containers">
-                <div className="container">
+            <div className="containers">
+                <div className="col-12">
                     <React.Fragment>
                         <BigCalendar
                             popup

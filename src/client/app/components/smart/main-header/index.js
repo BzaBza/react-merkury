@@ -28,9 +28,9 @@ class MainHeader extends React.Component {
 
         if (this.state.navToggle === false) {
             containers.marginLeft = '105px';
-            mainHeaderWrap.marginLeft = '105px';
+            mainHeaderWrap.marginLeft = '97px';
         } else {
-            mainHeaderWrap.marginLeft = '250px';
+            mainHeaderWrap.marginLeft = '246px';
             containers.marginLeft = '250px';
         }
     };
@@ -54,8 +54,8 @@ class MainHeader extends React.Component {
                         </button>
                         <input type="text" className={this.state.searchToggle ? 'hide':''}/>
                     </div>
-                    <div className="d-flex flex-wrap header-side-menu align-items-center">
-                        <button type="submit" className="button btn btn-primary">+ Add project</button>
+                    <div className="d-flex justify-content-around header-side-menu align-items-center col-4">
+                        <button type="submit" className="button btn btn-primary"><span className="gray">+</span> Add project</button>
                         <button className="drop-menu"><GoMail className="icon"/></button>
                         <button className="drop-menu"><TiBell className="icon"/></button>
                         <UserMenu/>

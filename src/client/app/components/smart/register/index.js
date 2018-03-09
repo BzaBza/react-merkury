@@ -29,16 +29,7 @@ class Register extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        const userInfo = {
-            email: this.state.email,
-            username: this.state.username,
-            password: this.state.password,
-            tel: this.state.tel
-        };
-        const userData = JSON.stringify(userInfo);
-        localStorage.setItem('userData',
-            userData
-        );
+        localStorage.setItem('userData', JSON.stringify(this.state));
     }
 
     handelEmailChange(event) {

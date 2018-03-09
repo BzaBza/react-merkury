@@ -1,10 +1,6 @@
 import React, {component} from 'react';
 import FaEllipsisV from 'react-icons/lib/fa/ellipsis-v';
 import MdAccessTime from 'react-icons/lib/md/access-time';
-import userPhoto1 from '../../../icons/users/johhn-doe.png';
-import userPhoto2 from '../../../icons/users/alex-smith.png';
-import userPhoto3 from '../../../icons/users/nina-jones.png';
-import userPhoto4 from '../../../icons/users/ann-cloony.png';
 
 class User extends React.Component {
     constructor(props) {
@@ -18,12 +14,12 @@ class User extends React.Component {
             {
                 userData: [
                     {
-                        userName: 'Jon Doe',
+                        userName: 'John Doe',
                         position: 'CEO',
                         lastActivity: 'Online now!',
                         email: 'asdasd@asd.com',
                         phone: '88063966667',
-                        userPhoto: userPhoto1
+                        userPhoto: './users/john-doe.png'
                     },
                     {
                         userName: 'Alex Smith',
@@ -31,7 +27,7 @@ class User extends React.Component {
                         lastActivity: 'Online now!',
                         email: 'asdasd@asd.com',
                         phone: '88063966667',
-                        userPhoto: userPhoto2
+                        userPhoto: './users/alex-smith.png'
                     },
                     {
                         userName: 'Nina Jones',
@@ -39,7 +35,7 @@ class User extends React.Component {
                         lastActivity: '20 minutes ago',
                         email: 'asdasd@asd.com',
                         phone: '88063966667',
-                        userPhoto: userPhoto3
+                        userPhoto: './users/nina-jones.png'
                     },
                     {
                         userName: 'Ann Cloony',
@@ -47,7 +43,7 @@ class User extends React.Component {
                         lastActivity: '99999 days ago',
                         email: 'asdasd@asd.com',
                         phone: '88063966667',
-                        userPhoto: userPhoto4
+                        userPhoto: './users/ann-cloony.png'
                     },
                 ]
             }

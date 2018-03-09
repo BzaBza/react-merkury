@@ -50,7 +50,7 @@ class Message extends React.Component {
                                 <div>
                                     <div className="d-flex">
                                         <p>{value.userName}</p>
-                                        <p className="gray">{value.time + value.condition}</p>
+                                        <p className="gray col-6">{value.time + value.condition}</p>
                                     </div>
                                     <p>{value.message}</p>
                                 </div>
