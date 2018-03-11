@@ -36,7 +36,7 @@ class Workflow extends Component {
         ];
 
         return (
-            <div style={style} className="containers workflow-container d-flex flex-wrap">
+            <div style={style} className="workflow-container d-flex flex-wrap">
                 <div>
                     <div className="d-flex justify-content-between align-items-center">
                         <h3>To Do <span className="gray">({listOne.length})</span></h3>

@@ -5,7 +5,7 @@ class Settings extends React.Component {
 
     render() {
         return (
-            <section className="containers">
+            <section>
                 SETTINGS
             </section>
         )

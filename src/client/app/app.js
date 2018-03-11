@@ -44,15 +44,17 @@ class App extends Component {
                                                                                      navToggle={this.state.navToggle}/>}/>
                     <Route strict path='/:page' render={(routeProps) => <MainHeader routeProps={routeProps}
                                                                                     handleClick={this.handleClick}/>}/>
-                    <Switch>
-                        <Route path='/home' render={(routeProps) => <HomePage routeProps={routeProps}
-                                                                              userData={this.state.userData}/>}/>
-                        <Route path='/calendar' component={Calendar}/>
-                        <Route path='/settings' component={Settings}/>
-                        <Route path='/statistics' component={Statistics}/>
-                        <Route path='/users' component={Users}/>
-                        <Route path='/workflow' component={Workflow}/>
-                    </Switch>
+                    <div className="containers">
+                        <Switch>
+                            <Route path='/home' render={(routeProps) => <HomePage routeProps={routeProps}
+                                                                                  userData={this.state.userData}/>}/>
+                            <Route path='/calendar' component={Calendar}/>
+                            <Route path='/settings' component={Settings}/>
+                            <Route path='/statistics' component={Statistics}/>
+                            <Route path='/users' component={Users}/>
+                            <Route path='/workflow' component={Workflow}/>
+                        </Switch>
+                    </div>
                 </div>
             </Router>
         )

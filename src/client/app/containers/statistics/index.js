@@ -9,7 +9,7 @@ class Statistics extends React.Component {
 
     render() {
         return (
-            <section className="containers">
+            <section>
                 <header className="d-flex justify-content-between statistics-header flex-wrap">
                     <h2>Lorem Ipsum Stats</h2>
                     <div className="d-flex justify-content-between col-3">

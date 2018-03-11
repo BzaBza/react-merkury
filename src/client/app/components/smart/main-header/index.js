@@ -27,11 +27,11 @@ class MainHeader extends React.Component {
         let mainHeaderWrap = document.querySelector('.main-header-wrap').style;
 
         if (this.state.navToggle === false) {
-            containers.marginLeft = '105px';
-            mainHeaderWrap.marginLeft = '97px';
+            containers.marginLeft = '2.6cm';
+            mainHeaderWrap.marginLeft = '2.6cm';
         } else {
-            mainHeaderWrap.marginLeft = '246px';
-            containers.marginLeft = '250px';
+            mainHeaderWrap.marginLeft = '6.5cm';
+            containers.marginLeft = '6.5cm';
         }
     };
 

@@ -10,18 +10,16 @@ export default class Calendar extends Component {
         let allViews = Object.keys(BigCalendar.Views).map(k => BigCalendar.Views[2]);
         BigCalendar.momentLocalizer(moment);
         return (
-            <div className="containers">
-                <div className="col-12">
-                    <React.Fragment>
-                        <BigCalendar
-                            popup
-                            events={events}
-                            views={{month: true, week: true, day: true}}
-                            defaultDate={new Date(2018, 1, 1)}
-                            components={{event: CustomEvent}}
-                        />
-                    </React.Fragment>
-                </div>
+            <div className="col-12">
+                <React.Fragment>
+                    <BigCalendar
+                        popup
+                        events={events}
+                        views={{month: true, week: true, day: true}}
+                        defaultDate={new Date(2018, 1, 1)}
+                        components={{event: CustomEvent}}
+                    />
+                </React.Fragment>
             </div>
         );
     }
