@@ -6,10 +6,7 @@ import FaAngleRight from 'react-icons/lib/fa/angle-right';
 
 import Title from '../../dumb/title/index';
 
-
-
 class Login extends React.Component {
-
     constructor(props) {
         super(props);
         this.state = {
@@ -20,35 +17,33 @@ class Login extends React.Component {
         this.handelPasswordChange = this.handelPasswordChange.bind(this);
         this.handelLoginChange = this.handelLoginChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-
     }
 
     handleSubmit(event) {
         event.preventDefault();
         const userLoginInfo = {
             username: this.state.username,
-            password: this.state.password
+            password: this.state.password,
         };
         const userData = JSON.parse(localStorage.getItem('userData'));
 
         if (userLoginInfo.username === userData.username && userData.password === userLoginInfo.password) {
             this.props.setRootUserData(userData);
-            this.props.routeProps.history.push('/home')
-        }
-        else {
-            alert('Login failed')
+            this.props.routeProps.history.push('/home');
+        } else {
+            alert('Login failed');
         }
     }
 
 
     handelPasswordChange(event) {
-        this.setState({password: event.target.value});
-    };
+        this.setState({ password: event.target.value });
+    }
 
 
     handelLoginChange(event) {
-        this.setState({username: event.target.value});
-    };
+        this.setState({ username: event.target.value });
+    }
 
     render() {
         return (
@@ -80,8 +75,7 @@ class Login extends React.Component {
                     </form>
                 </div>
             </section>
-        )
+        );
     }
 }
-
 export default Login;

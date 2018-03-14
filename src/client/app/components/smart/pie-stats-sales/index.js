@@ -1,11 +1,9 @@
-import React, {component} from 'react';
-import PieChartSales from "../../dumb/pie-chart-sales/index";
-import pieChartData from '../../../config/pie-chart-sales-config'
+import React, { component } from 'react';
+import PieChartSales from '../../dumb/pie-chart-sales/index';
+import pieChartData from '../../../config/pie-chart-sales-config';
 
 class StatSales extends React.Component {
-
     render() {
-
         return (
             <section className="d-flex flex-wrap justify-content-around">
                 <div className="d-flex align-items-center">
@@ -30,8 +28,7 @@ class StatSales extends React.Component {
                     </div>
                 </div>
             </section>
-        )
+        );
     }
 }
-
 export default StatSales;

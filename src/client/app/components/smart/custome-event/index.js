@@ -1,33 +1,32 @@
-import React, { Component } from "react";
-
-import { Popover, PopoverBody } from "reactstrap";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { Popover, PopoverBody } from 'reactstrap';
 import User from '../../../icons/nicky.png';
 
 export default class CustomEvent extends React.Component {
     constructor(props) {
         super(props);
-
         this.toggle = this.toggle.bind(this);
         this.state = {
-            popoverOpen: false
+            popoverOpen: false,
         };
     }
-
     toggle() {
         this.setState({
-            popoverOpen: !this.state.popoverOpen
+            popoverOpen: !this.state.popoverOpen,
         });
     }
+
     render() {
         return (
             <div>
-                <a id={"Popover-" + this.props.event.id} onClick={this.toggle}>
+                <a id={`Popover-${this.props.event.id}`} onClick={this.toggle}>
                     {this.props.event.title}
                 </a>
                 <Popover
                     placement="right"
                     isOpen={this.state.popoverOpen}
-                    target={"Popover-" + this.props.event.id}
+                    target={`Popover-${this.props.event.id}`}
                     toggle={this.toggle}
                 >
                     <PopoverBody>
@@ -55,31 +54,31 @@ export default class CustomEvent extends React.Component {
                         <div className="popover-item">
                             <ul>
                                 <li className="popover-item-list">
-									<span className="popover-description">
+                                    <span className="popover-description">
 										Title:
-									</span>
+                                    </span>
                                     <span>{this.props.event.title}</span>
                                 </li>
                                 <li className="popover-item-list">
-									<span className="popover-description">
+                                    <span className="popover-description">
 										Starts:
-									</span>
+                                    </span>
                                     <span>
-										{this.props.event.start.toLocaleTimeString()}
-									</span>
+                                        {this.props.event.start.toLocaleTimeString()}
+                                    </span>
                                 </li>
                                 <li className="popover-item-list">
-									<span className="popover-description">
+                                    <span className="popover-description">
 										Ends:
-									</span>
+                                    </span>
                                     <span>
-										{this.props.event.end.toLocaleTimeString()}
-									</span>
+                                        {this.props.event.end.toLocaleTimeString()}
+                                    </span>
                                 </li>
                                 <li className="popover-item-list">
-									<span className="popover-description">
+                                    <span className="popover-description">
 										Place:
-									</span>
+                                    </span>
                                     <span>{this.props.event.place}</span>
                                 </li>
                             </ul>
@@ -98,3 +97,16 @@ export default class CustomEvent extends React.Component {
         );
     }
 }
+
+CustomEvent.propTypes = {
+    title: PropTypes.string,
+    start: PropTypes.string,
+    end: PropTypes.string,
+    place: PropTypes.string,
+};
+CustomEvent.defaultProps  = {
+    title: '',
+    start: '',
+    end: '',
+    place: '',
+};

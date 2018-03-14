@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "eslint-test": "./node_modules/.bin/eslint src/client/app/**/**/index.js --fix",
     "start": "webpack-dev-server && webpack --watch"
   },
   "author": "",
@@ -17,12 +18,14 @@
     "bootstrap": "^4.0.0-beta.2",
     "chart.js": "^2.7.1",
     "debug": "^3.1.0",
+    "eslint-config-airbnb": "^16.1.0",
     "history": "^4.7.2",
     "immutability-helper": "^2.6.5",
     "jquery": "^3.3.1",
     "moment": "^2.20.1",
     "popper.js": "^1.12.9",
     "postcss-loader": "^2.0.10",
+    "prop-types": "^15.6.1",
     "react": "^16.2.0",
     "react-big-calendar": "^0.18.0",
     "react-chartjs-2": "^2.7.0",
@@ -40,6 +43,10 @@
   },
   "devDependencies": {
     "autoprefixer-loader": "^3.2.0",
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-react": "^7.7.0",
     "webpack-dev-server": "^2.11.1"
   }
 }

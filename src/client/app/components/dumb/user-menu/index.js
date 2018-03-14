@@ -1,4 +1,4 @@
-import {Link} from  'react-router-dom';
+import { Link } from 'react-router-dom';
 import React from 'react';
 import { ButtonDropdown, DropdownMenu, DropdownToggle } from 'reactstrap';
 import UserImage from '../../../icons/user-image.png';
@@ -15,7 +15,7 @@ export default class UserMenu extends React.Component {
 
     toggle() {
         this.setState({
-            dropdownOpen: !this.state.dropdownOpen
+            dropdownOpen: !this.state.dropdownOpen,
         });
     }
 

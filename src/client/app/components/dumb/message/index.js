@@ -1,12 +1,12 @@
-import React, {component} from 'react';
-import messageData from "../../../data/message-data";
+import React, { component } from 'react';
+import messageData from '../../../data/message-data';
 
 class Message extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             messageData: [],
-            messageDaysLeft: 2
+            messageDaysLeft: 2,
 
         };
     }
@@ -14,7 +14,7 @@ class Message extends React.Component {
     getUserData() {
         this.setState((state, props) => (
             {
-                messageData: messageData
+                messageData,
             }
         ));
     }
@@ -26,7 +26,6 @@ class Message extends React.Component {
 
 
     render() {
-
         return (
             <section className="home-component bottom-list">
                 <div className="list-title d-flex justify-content-between align-items-center">
@@ -38,26 +37,24 @@ class Message extends React.Component {
                     </div>
                 </div>
                 <ul className="home-footer-list">
-                    {this.state.messageData.map((value, index) => {
-                        return <li key={index}
-                                   className="d-flex justify-content-between align-items-center home-footer-line">
-                            <div className="d-flex flex-wrap align-items-center">
-                                <div className=" align-items-center side-image">
-                                    <img src={value.userPhoto} className="user-photo"/>
-                                </div>
-                                <div>
-                                    <div className="d-flex">
-                                        <div className="user-name"><p>{value.userName}</p></div>
-                                        <div><p className="gray">{value.time + value.condition}</p></div>
-                                    </div>
-                                    <p>{value.message}</p>
-                                </div>
+                    {this.state.messageData.map((value, index) => <li key={index}
+                        className="d-flex justify-content-between align-items-center home-footer-line">
+                        <div className="d-flex flex-wrap align-items-center">
+                            <div className=" align-items-center side-image">
+                                <img src={value.userPhoto} className="user-photo"/>
                             </div>
-                        </li>
-                    })}
+                            <div>
+                                <div className="d-flex">
+                                    <div className="user-name"><p>{value.userName}</p></div>
+                                    <div><p className="gray">{value.time + value.condition}</p></div>
+                                </div>
+                                <p>{value.message}</p>
+                            </div>
+                        </div>
+                    </li>)}
                 </ul>
             </section>
-        )
+        );
     }
 }
 

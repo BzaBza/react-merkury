@@ -6,18 +6,17 @@ import MdCallEnd from 'react-icons/lib/md/call-end';
 import MdHttps from 'react-icons/lib/md/https';
 import FaAngleRight from 'react-icons/lib/fa/angle-right';
 
-import Title from "../../dumb/title/index";
+import Title from '../../dumb/title/index';
 
 
 class Register extends React.Component {
-
     constructor(props) {
         super(props);
         this.state = {
             email: '',
             username: '',
             password: '',
-            tel: ''
+            tel: '',
         };
 
         this.handelEmailChange = this.handelEmailChange.bind(this);
@@ -33,20 +32,20 @@ class Register extends React.Component {
     }
 
     handelEmailChange(event) {
-        this.setState({email: event.target.value});
-    };
+        this.setState({ email: event.target.value });
+    }
 
     handelPasswordChange(event) {
-        this.setState({password: event.target.value});
-    };
+        this.setState({ password: event.target.value });
+    }
 
     handelNumberChange(event) {
-        this.setState({tel: event.target.value});
-    };
+        this.setState({ tel: event.target.value });
+    }
 
     handelLoginChange(event) {
-        this.setState({username: event.target.value});
-    };
+        this.setState({ username: event.target.value });
+    }
 
 
     render() {
@@ -55,37 +54,37 @@ class Register extends React.Component {
                 <div className="authentication-wrap">
                     <div className="d-flex justify-content-center flex-wrap">
                         <Title title1='Registration ' title2='!'/>
-                        <form onSubmit={this.handleSubmit}  className="justify-content-center text-center col-6">
-                           <div className="d-flex inputs">
-                               <MdAccountCircle className="authentication-icon"/>
-                               <input
-                                   type='text'
-                                   placeholder="Username"
-                                   value={this.state.username}
-                                   onChange={this.handelLoginChange}
-                                   className="authentication-input"
-                               />
-                           </div>
-                           <div className="d-flex inputs">
-                               <TiAt className="authentication-icon"/>
-                               <input
-                                   type='email'
-                                   placeholder="Email"
-                                   value={this.state.email}
-                                   onChange={this.handelEmailChange}
-                                   className="authentication-input"
-                               />
-                           </div>
-                           <div className="d-flex inputs">
-                               <MdHttps className="authentication-icon"/>
-                               <input
-                                   type='password'
-                                   placeholder="Password"
-                                   value={this.state.password}
-                                   onChange={this.handelPasswordChange}
-                                   className="authentication-input"
-                               />
-                           </div>
+                        <form onSubmit={this.handleSubmit} className="justify-content-center text-center col-6">
+                            <div className="d-flex inputs">
+                                <MdAccountCircle className="authentication-icon"/>
+                                <input
+                                    type='text'
+                                    placeholder="Username"
+                                    value={this.state.username}
+                                    onChange={this.handelLoginChange}
+                                    className="authentication-input"
+                                />
+                            </div>
+                            <div className="d-flex inputs">
+                                <TiAt className="authentication-icon"/>
+                                <input
+                                    type='email'
+                                    placeholder="Email"
+                                    value={this.state.email}
+                                    onChange={this.handelEmailChange}
+                                    className="authentication-input"
+                                />
+                            </div>
+                            <div className="d-flex inputs">
+                                <MdHttps className="authentication-icon"/>
+                                <input
+                                    type='password'
+                                    placeholder="Password"
+                                    value={this.state.password}
+                                    onChange={this.handelPasswordChange}
+                                    className="authentication-input"
+                                />
+                            </div>
                             <div className="d-flex inputs">
                                 <MdCallEnd className="authentication-icon"/>
                                 <input
@@ -101,7 +100,7 @@ class Register extends React.Component {
                     </div>
                 </div>
             </section>
-        )
+        );
     }
 }
 

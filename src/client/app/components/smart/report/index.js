@@ -1,9 +1,8 @@
-import React from 'react'
-import ActiveUsers from "../../dumb/active-users/index";
-import DropPeriod from "../../dumb/drop-period/index";
+import React from 'react';
+import ActiveUsers from '../../dumb/active-users/index';
+import DropPeriod from '../../dumb/drop-period/index';
 
 class Report extends React.Component {
-
     render() {
         return (
             <div className="home-component col-md-5">
@@ -13,7 +12,7 @@ class Report extends React.Component {
                 </div>
                 <ActiveUsers/>
             </div>
-        )
+        );
     }
 }
 export default Report;

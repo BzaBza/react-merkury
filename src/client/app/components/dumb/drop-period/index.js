@@ -8,16 +8,15 @@ export default class DropPeriod extends React.Component {
 
         this.toggle = this.toggle.bind(this);
         this.state = {
-            dropdownOpen: false
+            dropdownOpen: false,
         };
     }
 
     toggle() {
         this.setState({
-            dropdownOpen: !this.state.dropdownOpen
+            dropdownOpen: !this.state.dropdownOpen,
         });
     }
-
 
 
     render() {
@@ -32,6 +31,6 @@ export default class DropPeriod extends React.Component {
                 </DropdownMenu>
             </ButtonDropdown>
 
-        )
+        );
     }
 }

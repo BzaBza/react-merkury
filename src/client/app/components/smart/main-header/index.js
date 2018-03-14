@@ -6,25 +6,25 @@ import FaBars from 'react-icons/lib/fa/bars';
 import GoMail from 'react-icons/lib/go/mail';
 import TiBell from 'react-icons/lib/ti/bell';
 
-import UserMenu from "../../dumb/user-menu/index";
+import UserMenu from '../../dumb/user-menu/index';
 
 class MainHeader extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             navToggle: false,
-            searchToggle: true
+            searchToggle: true,
         };
         this.handleNavClick = this.handleNavClick.bind(this);
         this.handleSearchClick = this.handleSearchClick.bind(this);
     }
 
     handleNavClick() {
-        this.setState({navToggle: !this.state.navToggle});
+        this.setState({ navToggle: !this.state.navToggle });
         this.props.handleClick(this.state.navToggle);
 
-        let containers = document.querySelector('.containers').style;
-        let mainHeaderWrap = document.querySelector('.main-header-wrap').style;
+        const containers = document.querySelector('.containers').style;
+        const mainHeaderWrap = document.querySelector('.main-header-wrap').style;
 
         if (this.state.navToggle === false) {
             containers.marginLeft = '2.6cm';
@@ -33,26 +33,26 @@ class MainHeader extends React.Component {
             mainHeaderWrap.marginLeft = '6.5cm';
             containers.marginLeft = '6.5cm';
         }
-    };
+    }
 
     handleSearchClick() {
-        this.setState({searchToggle: !this.state.searchToggle});
-    };
+        this.setState({ searchToggle: !this.state.searchToggle });
+    }
 
     render() {
         return (
             <header className="main-header-wrap">
                 <div
-                    className={`${this.state.navToggle ? 'col-xl-11 col-lg-10 col-md-9 col-sm-8':'col-xl-10 col-lg-9 col-md-8 col-sm-6'}
+                    className={`${this.state.navToggle ? 'col-xl-11 col-lg-10 col-md-9 col-sm-8' : 'col-xl-10 col-lg-9 col-md-8 col-sm-6'}
                     ${'main-header d-flex align-content-center'}`}>
-                    <div  className="d-flex">
+                    <div className="d-flex">
                         <button type="button" className="drop-menu" onClick={this.handleNavClick}>
-                         <GoTriangleLeft className="triangle-left"/>   <FaBars  className="icon"/>
+                            <GoTriangleLeft className="triangle-left"/>   <FaBars className="icon"/>
                         </button>
                         <button type="button" className="drop-menu" onClick={this.handleSearchClick}>
                             <FaSearch className="icon"/>
                         </button>
-                        <input type="text" className={this.state.searchToggle ? 'hide':''}/>
+                        <input type="text" className={this.state.searchToggle ? 'hide' : ''}/>
                     </div>
                     <div className="d-flex justify-content-around header-side-menu align-items-center col-4">
                         <button type="submit" className="button btn btn-primary"><span className="gray">+</span> Add project</button>
@@ -63,8 +63,7 @@ class MainHeader extends React.Component {
                     <button type="button" className="header-side-menu-drop"/>
                 </div>
             </header>
-        )
+        );
     }
 }
-
 export default MainHeader;

@@ -1,6 +1,6 @@
-import React, {component} from 'react';
-import UserSales from "../../dumb/pie-chart-with-padding-angle/index";
-import DropPeriod from "../../dumb/drop-period/index";
+import React, { component } from 'react';
+import UserSales from '../../dumb/pie-chart-with-padding-angle/index';
+import DropPeriod from '../../dumb/drop-period/index';
 
 class Sales extends React.Component {
     render() {
@@ -10,10 +10,9 @@ class Sales extends React.Component {
                     <h3 className="home-title">Your Sales</h3>
                     <DropPeriod/>
                 </div>
-                   <UserSales/>
+                <UserSales/>
             </section>
-        )
+        );
     }
 }
-
 export default Sales;

@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import update from 'immutability-helper';
 import Card from '../../dumb/card/index';
+import update from 'immutability-helper';
 import { DropTarget } from 'react-dnd';
 
 class Container extends Component {
-
     constructor(props) {
         super(props);
         this.state = { cards: props.list };
@@ -13,8 +12,8 @@ class Container extends Component {
     pushCard(card) {
         this.setState(update(this.state, {
             cards: {
-                $push: [ card ]
-            }
+                $push: [card],
+            },
         }));
     }
 
@@ -22,9 +21,9 @@ class Container extends Component {
         this.setState(update(this.state, {
             cards: {
                 $splice: [
-                    [index, 1]
-                ]
-            }
+                    [index, 1],
+                ],
+            },
         }));
     }
 
@@ -36,9 +35,9 @@ class Container extends Component {
             cards: {
                 $splice: [
                     [dragIndex, 1],
-                    [hoverIndex, 0, dragCard]
-                ]
-            }
+                    [hoverIndex, 0, dragCard],
+                ],
+            },
         }));
     }
 
@@ -49,39 +48,35 @@ class Container extends Component {
 
         const backgroundColor = isActive ? 'rgba(176, 176, 176, 1)' : '#FFF';
 
-        return connectDropTarget(
-            <div style={{
-                backgroundColor ,
-            }}>
-                {cards.map((card, i) => {
-                    return (
-                        <Card
-                            key={card.id}
-                            index={i}
-                            listId={this.props.id}
-                            card={card}
-                            removeCard={this.removeCard.bind(this)}
-                            moveCard={this.moveCard.bind(this)} />
-                    );
-                })}
-            </div>
-        );
+        return connectDropTarget(<div style={{
+            backgroundColor,
+        }}>
+            {cards.map((card, i) => (
+                <Card
+                    key={card.id}
+                    index={i}
+                    listId={this.props.id}
+                    card={card}
+                    removeCard={this.removeCard.bind(this)}
+                    moveCard={this.moveCard.bind(this)} />
+            ))}
+        </div>);
     }
 }
 
 const cardTarget = {
-    drop(props, monitor, component ) {
+    drop(props, monitor, component) {
         const { id } = props;
         const sourceObj = monitor.getItem();
-        if ( id !== sourceObj.listId ) component.pushCard(sourceObj.card);
+        if (id !== sourceObj.listId) component.pushCard(sourceObj.card);
         return {
-            listId: id
+            listId: id,
         };
-    }
+    },
 };
 
-export default DropTarget("CARD", cardTarget, (connect, monitor) => ({
+export default DropTarget('CARD', cardTarget, (connect, monitor) => ({
     connectDropTarget: connect.dropTarget(),
     isOver: monitor.isOver(),
-    canDrop: monitor.canDrop()
+    canDrop: monitor.canDrop(),
 }))(Container);

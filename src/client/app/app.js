@@ -34,27 +34,26 @@ class App extends Component {
     };
 
     render() {
-
         return (
             <Router history={customHistory}>
                 <div className="d-flex">
-                        <Route exact path='/' render={(routeProps) => <Sign routeProps={routeProps}
-                                                                            setUserData={this.setUserData}/>}/>
-                    <Route strict path='/:page'  render={(routeProps) => <Navigation routeProps={routeProps}
-                                                                                     navToggle={this.state.navToggle}/>}/>
+                    <Route exact path='/' render={(routeProps) => <Sign routeProps={routeProps}
+                                                                        setUserData={this.setUserData}/>}/>
+                    <Route strict path='/:page' render={(routeProps) => <Navigation routeProps={routeProps}
+                                                                                    navToggle={this.state.navToggle}/>}/>
                     <Route strict path='/:page' render={(routeProps) => <MainHeader routeProps={routeProps}
                                                                                     handleClick={this.handleClick}/>}/>
-                    <div className="containers">
-                        <Switch>
-                            <Route path='/home' render={(routeProps) => <HomePage routeProps={routeProps}
-                                                                                  userData={this.state.userData}/>}/>
-                            <Route path='/calendar' component={Calendar}/>
-                            <Route path='/settings' component={Settings}/>
-                            <Route path='/statistics' component={Statistics}/>
-                            <Route path='/users' component={Users}/>
-                            <Route path='/workflow' component={Workflow}/>
-                        </Switch>
-                    </div>
+
+                    <Switch>
+                        <Route path='/home' render={(routeProps) => <HomePage routeProps={routeProps}
+                                                                              userData={this.state.userData}/>}/>
+                        <Route path='/calendar' component={Calendar}/>
+                        <Route path='/settings' component={Settings}/>
+                        <Route path='/statistics' component={Statistics}/>
+                        <Route path='/users' component={Users}/>
+                        <Route path='/workflow' component={Workflow}/>
+
+                    </Switch>
                 </div>
             </Router>
         )

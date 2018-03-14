@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import {Line} from 'react-chartjs-2';
-import lineChartData from '../../../config/line-home-chartdata-config'
+import React, { Component } from 'react';
+import { Line } from 'react-chartjs-2';
+import lineChartData from '../../../config/line-home-chartdata-config';
 
 class ActiveUsers extends Component {
     render() {
@@ -12,7 +12,7 @@ class ActiveUsers extends Component {
                         height={320}
                         width={720}
                         options={{
-                            legend: false
+                            legend: false,
                         }}
                     />
                 </div>

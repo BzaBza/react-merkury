@@ -6,7 +6,7 @@ class Logo extends React.Component {
             <div className="logo-wrap">
                 <h1 className="logo"/>
             </div>
-        )
+        );
     }
 }
 

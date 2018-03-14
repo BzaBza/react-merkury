@@ -1,12 +1,11 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
-import {TabContent, TabPane, NavItem, Nav, NavLink} from 'reactstrap';
-import Register from "../../components/smart/register/index";
-import Login from "../../components/smart/login/index";
-import Logo from "../../components/dumb/logo/index";
+import { TabContent, TabPane, NavItem, Nav, NavLink } from 'reactstrap';
+import Register from '../../components/smart/register/index';
+import Login from '../../components/smart/login/index';
+import Logo from '../../components/dumb/logo/index';
 
 class Sign extends Component {
-
     constructor(props) {
         super(props);
 
@@ -20,10 +19,9 @@ class Sign extends Component {
     toggleTab(tab) {
         if (this.state.currentTab !== tab) {
             this.setState({
-                currentTab: tab
+                currentTab: tab,
             });
         }
-
     }
 
 
@@ -39,8 +37,8 @@ class Sign extends Component {
                                 <NavLink
                                     className={ (this.state.currentTab === 'register') ?
                                         'active-link' : '' } onClick={ () => {
-                                    this.toggleTab('register');
-                                }}>
+                                        this.toggleTab('register');
+                                    }}>
                                     Register
                                 </NavLink>
                             </NavItem>
@@ -49,8 +47,8 @@ class Sign extends Component {
                                 <NavLink
                                     className={ (this.state.currentTab === 'login') ?
                                         'active-link' : '' } onClick={ () => {
-                                    this.toggleTab('login');
-                                }}>
+                                        this.toggleTab('login');
+                                    }}>
                                     Login
                                 </NavLink>
                             </NavItem>
