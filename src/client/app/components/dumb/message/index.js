@@ -1,29 +1,14 @@
 import React, { component } from 'react';
-import messageData from '../../../data/message-data';
+import messageData from '../../../reducer/messageData';
 
 class Message extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            messageData: [],
             messageDaysLeft: 2,
 
         };
     }
-
-    getUserData() {
-        this.setState((state, props) => (
-            {
-                messageData,
-            }
-        ));
-    }
-
-
-    componentWillMount() {
-        this.getUserData();
-    }
-
 
     render() {
         return (
@@ -37,7 +22,7 @@ class Message extends React.Component {
                     </div>
                 </div>
                 <ul className="home-footer-list">
-                    {this.state.messageData.map((value, index) => <li key={index}
+                    {messageData.map((value, index) => <li key={index}
                         className="d-flex justify-content-between align-items-center home-footer-line">
                         <div className="d-flex flex-wrap align-items-center">
                             <div className=" align-items-center side-image">

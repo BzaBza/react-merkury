@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom';
 import React from 'react';
 import { ButtonDropdown, DropdownMenu, DropdownToggle } from 'reactstrap';
+import { Link } from 'react-router-dom';
 import UserImage from '../../../icons/user-image.png';
 
 export default class UserMenu extends React.Component {

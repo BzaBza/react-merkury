@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Card from '../../dumb/card/index';
 import update from 'immutability-helper';
 import { DropTarget } from 'react-dnd';
+import Card from '../../dumb/card/index';
 
 class Container extends Component {
     constructor(props) {

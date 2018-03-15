@@ -29,6 +29,8 @@ HomePage.propTypes = {
     },
 };
 HomePage.defaultProps  = {
-    username: '',
+    userData: {
+        username: ''
+    },
 };
 export default HomePage;

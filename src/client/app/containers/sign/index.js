@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-
 import { TabContent, TabPane, NavItem, Nav, NavLink } from 'reactstrap';
+
 import Register from '../../components/smart/register/index';
 import Login from '../../components/smart/login/index';
 import Logo from '../../components/dumb/logo/index';

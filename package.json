@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "eslint-test": "./node_modules/.bin/eslint src/client/app/**/**/index.js --fix",
+    "eslint-test": "./node_modules/.bin/eslint src/client/app/**/**/**.js",
     "start": "webpack-dev-server && webpack --watch"
   },
   "author": "",
@@ -33,11 +33,15 @@
     "react-dnd-html5-backend": "^2.5.4",
     "react-dom": "^16.2.0",
     "react-icons": "^2.2.7",
+    "react-redux": "^5.0.7",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-update": "^0.4.4",
     "react-virtualized": "^9.18.5",
     "reactstrap": "^5.0.0-beta",
+    "redux": "^3.7.2",
+    "redux-devtools-extension": "^2.13.2",
+    "redux-thunk": "^2.2.0",
     "webpack": "^3.10.0",
     "webpack-sass-loaders": "^1.0.0"
   },
@@ -47,6 +51,7 @@
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-react": "^7.7.0",
+    "redux-devtools": "^3.4.1",
     "webpack-dev-server": "^2.11.1"
   }
 }

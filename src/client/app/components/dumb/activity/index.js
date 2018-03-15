@@ -1,29 +1,17 @@
 import React, { component } from 'react';
 import MdAccessTime from 'react-icons/lib/md/access-time';
-import activityData from '../../../data/activity-data';
+import activityData from '../../../reducer/activityData';
 
 class Activity extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            activityData: [],
             activityDaysLeft: '5',
             activityDaysDelays: '',
 
         };
     }
 
-    getUserData() {
-        this.setState((state, props) => (
-            {
-                activityData,
-            }
-        ));
-    }
-
-    componentWillMount() {
-        this.getUserData();
-    }
 
     render() {
         return (
@@ -39,7 +27,7 @@ class Activity extends React.Component {
                     </div>
                 </div>
                 <ul className="home-footer-list">
-                    {this.state.activityData.map((value, index) => <li key={index}
+                    {activityData.map((value, index) => <li key={index}
                         className="d-flex justify-content-between align-items-center activity-list home-footer-line">
                         <div className="d-flex align-items-center">
                             <div className="align-items-center side-image">
