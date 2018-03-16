@@ -1,6 +1,6 @@
 import React, { component } from 'react';
 import MdAccessTime from 'react-icons/lib/md/access-time';
-import activityData from '../../../reducer/activityData';
+import activityData from '../../../reducers/activityData';
 
 class Activity extends React.Component {
     constructor(props) {

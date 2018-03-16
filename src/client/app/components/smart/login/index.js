@@ -25,6 +25,8 @@ class Login extends React.Component {
             username: this.state.username,
             password: this.state.password,
         };
+        this.password.value = '';
+
         const userData = JSON.parse(localStorage.getItem('userData'));
 
         if (userLoginInfo.username === userData.username && userData.password === userLoginInfo.password) {
@@ -56,7 +58,7 @@ class Login extends React.Component {
                             <input
                                 type='text'
                                 placeholder="Username"
-                                value={this.state.username}
+                                ref={(input  =>{this.login = input})}
                                 onChange={this.handelLoginChange}
                                 className="authentication-input"
                             />
@@ -66,7 +68,7 @@ class Login extends React.Component {
                             <input
                                 type='password'
                                 placeholder="Password"
-                                value={this.state.password}
+                                ref={(input  =>{this.password = input})}
                                 onChange={this.handelPasswordChange}
                                 className="authentication-input "
                             />

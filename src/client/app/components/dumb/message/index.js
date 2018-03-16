@@ -1,5 +1,5 @@
 import React, { component } from 'react';
-import messageData from '../../../reducer/messageData';
+import messageData from '../../../reducers/messageData';
 
 class Message extends React.Component {
     constructor(props) {

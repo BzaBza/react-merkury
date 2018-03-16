@@ -27,4 +27,4 @@ export default [
         message: 'Hello! Could You bring me coffee please?',
         userPhoto: './users/nina-jones.png'
     },
-]
+];
