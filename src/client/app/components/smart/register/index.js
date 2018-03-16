@@ -28,22 +28,26 @@ class Register extends React.Component {
     handleSubmit(event) {
         event.preventDefault();
         localStorage.setItem('userData', JSON.stringify(this.state));
+        this.login.value = '';
+        this.password.value = '';
+        this.tel.value = '';
+        this.email.value = '';
     }
 
     handelEmailChange(event) {
-        this.setState({ email: event.target.value });
+        this.setState({ email: this.email.value });
     }
 
     handelPasswordChange(event) {
-        this.setState({ password: event.target.value });
+        this.setState({ password: this.password.value });
     }
 
     handelNumberChange(event) {
-        this.setState({ tel: event.target.value });
+        this.setState({ tel: this.tel.value});
     }
 
     handelLoginChange(event) {
-        this.setState({ username: event.target.value });
+        this.setState({ username: this.login.value });
     }
 
 
@@ -59,7 +63,7 @@ class Register extends React.Component {
                                 <input
                                     type='text'
                                     placeholder="Username"
-                                    value={this.state.username}
+                                    ref={(input => {this.login = input})}
                                     onChange={this.handelLoginChange}
                                     className="authentication-input"
                                 />
@@ -69,7 +73,7 @@ class Register extends React.Component {
                                 <input
                                     type='email'
                                     placeholder="Email"
-                                    value={this.state.email}
+                                    ref={(input => {this.email = input})}
                                     onChange={this.handelEmailChange}
                                     className="authentication-input"
                                 />
@@ -79,7 +83,7 @@ class Register extends React.Component {
                                 <input
                                     type='password'
                                     placeholder="Password"
-                                    value={this.state.password}
+                                    ref={(input  =>{this.password = input})}
                                     onChange={this.handelPasswordChange}
                                     className="authentication-input"
                                 />
@@ -89,7 +93,7 @@ class Register extends React.Component {
                                 <input
                                     type='tel'
                                     placeholder="Phone-number"
-                                    value={this.state.tel}
+                                    ref={(input  =>{this.tel = input})}
                                     onChange={this.handelNumberChange}
                                     className="authentication-input"
                                 />
