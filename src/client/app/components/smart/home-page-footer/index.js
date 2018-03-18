@@ -15,8 +15,8 @@ componentWillMount(){
         return (
             <section className="d-flex flex-wrap justify-content-around home-page-bottom">
                 <Tasks taskData = {this.props.taskData}/>
-                <Message/>
-                <Activity/>
+                <Message />
+                <Activity />
             </section>
         );
     }

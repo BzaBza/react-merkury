@@ -20,7 +20,7 @@ class MainHeader extends React.Component {
     }
 
     handleNavClick() {
-        this.setState({ navToggle: !this.state.navToggle });
+        this.setState({navToggle: !this.state.navToggle});
         this.props.handleClick(this.state.navToggle);
 
         const containers = document.querySelector('.containers').style;
@@ -28,34 +28,36 @@ class MainHeader extends React.Component {
 
         if (this.state.navToggle === false) {
             containers.marginLeft = '2.6cm';
-            mainHeaderWrap.marginLeft = '2.6cm';
+            mainHeaderWrap.paddingLeft = '2.6cm';
         } else {
-            mainHeaderWrap.marginLeft = '6.5cm';
+            mainHeaderWrap.paddingLeft = '6.5cm';
             containers.marginLeft = '6.5cm';
         }
     }
 
     handleSearchClick() {
-        this.setState({ searchToggle: !this.state.searchToggle });
+        this.setState({searchToggle: !this.state.searchToggle});
     }
 
     render() {
         return (
             <header className="main-header-wrap">
                 <div
-                    className={`${this.state.navToggle ? 'col-xl-11 col-lg-10 col-md-9 col-sm-8' : 'col-xl-10 col-lg-9 col-md-8 col-sm-6'}
-                    ${'main-header d-flex align-content-center'}`}>
+                    className={`${this.state.navToggle ? 'col-xl-11 col-lg-10 col-md-9 ' : 'col-xl-12 col-lg-9 col-md-8 '}
+                    ${'main-header d-flex align-content-center justify-content-between'}`}>
                     <div className="d-flex">
                         <button type="button" className="drop-menu" onClick={this.handleNavClick}>
-                            <GoTriangleLeft className="triangle-left"/>   <FaBars className="icon"/>
+                            <GoTriangleLeft className="triangle-left"/><FaBars className="icon"/>
                         </button>
                         <button type="button" className="drop-menu" onClick={this.handleSearchClick}>
                             <FaSearch className="icon"/>
                         </button>
                         <input type="text" className={this.state.searchToggle ? 'hide' : ''}/>
                     </div>
-                    <div className="d-flex justify-content-around header-side-menu align-items-center col-4">
-                        <button type="submit" className="button btn btn-primary"><span className="gray">+</span> Add project</button>
+                    <div className="d-flex header-side-menu align-items-center col-4">
+                        <button type="submit" className="button btn btn-primary"><span className="gray">+</span> Add
+                            project
+                        </button>
                         <button className="drop-menu"><GoMail className="icon"/></button>
                         <button className="drop-menu"><TiBell className="icon"/></button>
                         <UserMenu/>

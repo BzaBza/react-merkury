@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import MdAccountCircle from 'react-icons/lib/md/account-circle';
 import MdHttps from 'react-icons/lib/md/https';
@@ -6,7 +6,7 @@ import FaAngleRight from 'react-icons/lib/fa/angle-right';
 
 import Title from '../../dumb/title/index';
 
-class Login extends React.Component {
+class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
